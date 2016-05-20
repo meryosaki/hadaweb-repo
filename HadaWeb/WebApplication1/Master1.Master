@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebApplication1.Master1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   	<title>SERVIRENT</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.dropotron.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" runat="server" />
+			<link rel="stylesheet" href="css/style.css" runat="server" />
+			<link rel="stylesheet" href="css/style-wide.css" runat="server"/>
+		</noscript>
+</head>
+<body>
+    <form id="form1" runat="server" style="width:100%; height:100%;">
+   
+       <div class="wrapper style1">
+
+				<!-- Header -->
+					<div id="header" class="skel-panels-fixed">
+						<div id="logo" >
+                            <img src="images/meditation.png" width="20" height="20"/>
+							<h1><a href="inicio.aspx" runat="server">SERVIRENT</a></h1>
+							<span class="tag">by Hada team</span>
+						</div>
+						<nav id="nav">
+							<ul>
+                                <asp:Button ID="Inicio" runat="server" Text="Inicio" onclick="InicioRedirect" Width="10%" Font-Size="Small"  />
+                                <asp:Button ID="Cursos" runat="server" Text="Cursos" onclick="CursosRedirect" Width="10%" Font-Size="Small"/>
+                                <asp:Button ID="Ofertas" runat="server" Text="Ofertas" onclick="OfertasRedirect" Width="10%" Font-Size="Small" />
+                                <asp:Button ID="ComoComprar" runat="server" Text="Como comprar" onclick="ComprarRedirect" Width="15%" Font-Size="Small"/>
+                                <asp:Button ID="Quienes" runat="server" Text="Quienes somos" onclick="QuienesRedirect" Width="15%" Font-Size="Small"/>
+                                <asp:Button ID="AvisoLegal" runat="server" Text="Aviso legal" onclick="AvisoRedirect" Width="13%" Font-Size="Small"/>
+                                <asp:Button ID="Identificate" runat="server" Text="Identificate" onclick="IdentificateRedirect" Width="12%" Font-Size="Small"/>
+                                <asp:Button ID="Salir" runat="server" Text="Cerrar sesion" onclick="SalirRedirect" Width="13%" Font-Size="Small"/>
+                                <asp:Button ID="Carrito" runat="server" Text="Carrito" onclick="CarritoRedirect" Width="13%" Font-Size="Small"/>
+                                <li></li>
+						        <!--<li class="active"><a href="inicio.aspx">Inicio</a></li>
+						        <li><a href="cursos.aspx" runat="server">Cursos</a></li>
+                                <li><a href="ofertas.aspx" runat="server">Ofertas</a></li>
+                                <li><a href="comocomprar.aspx" runat="server">Cómo comprar</a></li>
+						        <li><a href="quienes.aspx" runat="server">Quiénes somos</a></li>
+                                <li><a href="avisolegal.aspx" runat="server">Aviso legal</a></li>
+                                <li>|</li>
+                                <img src="images/iconos/barra02.png"/><li class="active"><a href="identificarse.aspx" runat="server">Identifícate</a></li>
+                                <img src="images/iconos/carrito07.png"/><li class="active"><a href="micarrito.aspx" runat="server">Carrito</a></li>
+                                -->
+                                <!-- Traductor google -->
+                                <p></p>
+								<div id="google_translate_element"></div>
+							    <script type="text/javascript">
+							        function googleTranslateElementInit() {
+							            new google.translate.TranslateElement({ pageLanguage: 'es' }, 'google_translate_element');
+							        }
+					            </script> <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript">
+					            </script>
+
+							</ul>
+						</nav>
+					</div>
+            
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+        </asp:ContentPlaceHolder>
+           <!-- Footer -->
+		<div id="footer" class="wrapper style2">
+			<div class="container">
+				<section>
+					<header class="major">
+						<h2>¿Tienes alguna pregunta?</h2>
+						<span class="byline">¡No lo dudes y contacta con nosotros!</span>
+					</header>
+					<form method="post" action="#">
+						<div class="row half">
+							<div class="12u">
+								<input class="text" type="text" name="name" id="name" placeholder="Nombre" />
+							</div>
+						</div>
+						<div class="row half">
+							<div class="12u">
+								<input class="text" type="text" name="email" id="email" placeholder="Email" />
+							</div>
+						</div>
+						<div class="row half">
+							<div class="12u">
+								<textarea name="message" id="message" placeholder="Mensaje"></textarea>
+							</div>
+						</div>
+						<div class="row half">
+							<div class="12u">
+								<ul class="actions">
+									<li>
+										<input type="submit" value="Enviar mensaje" class="button alt" />
+									</li>
+								</ul>
+							</div>
+						</div>
+					</form>
+				</section>
+			</div>
+		</div>
+
+	<!-- Copyright -->
+		<div id="copyright">
+			<div class="container">
+				<div class="copyright">
+					<p>Diseñado por Hada team </p>
+				        <ul class="icons">
+					        <li><a href="https://www.facebook.com/Serv1rent/"   target="_blank" class="fa fa-facebook"><span>Facebook</span></a></li>
+					        <li><a href="https://twitter.com/Serv1rent"   target="_blank" class="fa fa-twitter"><span>Twitter</span></a></li>
+					        <li><a href="https://www.instagram.com/servirent/"  target="_blank"  class="fa fa-instagram"><span>Instagram</span></a></li>
+					        <li><a href="https://plus.google.com/u/0/104476755668848707232?hl=es"  target="_blank" class="fa fa-google-plus"><span>Google+</span></a></li>
+				        </ul>
+				</div>
+			</div>
+		</div>
+    </div>
+        </form>
+</body>
+</html>
