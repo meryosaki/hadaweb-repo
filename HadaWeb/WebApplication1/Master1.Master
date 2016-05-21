@@ -59,10 +59,10 @@
                                  <asp:LinkButton ID="Cuenta" runat="server"  ForeColor="White" OnClick="RedirectCuenta"  Font-Underline="false" >Mi Cuenta</asp:LinkButton>
                                 <asp:ImageButton ID="IdentificarseIcon" runat="server" ImageUrl="images/iconos/barra02.png" OnClick="RedirectImagenIde" />
                                 <li></li>
-                                <asp:LinkButton ID="Carrito" runat="server"  ForeColor="White"  Font-Underline="false" >Carrito</asp:LinkButton>
+                                <asp:LinkButton ID="Carrito" runat="server"  ForeColor="White"  OnClick="RedirectCarrito" Font-Underline="false" >Carrito</asp:LinkButton>
                                <asp:ImageButton ID="CarritoIcon" runat="server" ImageUrl="images/iconos/carrito07.png"  OnClick="RedirectImagenCar"/>
                                 <li></li>
-                                <asp:LinkButton ID="Cerrar" runat="server"  ForeColor="White"  Font-Underline="false" >Cerrar Sesión</asp:LinkButton>
+                                <asp:LinkButton ID="Cerrar" runat="server"  ForeColor="White"  OnClick="RedirectImagenCer" Font-Underline="false" >Cerrar Sesión</asp:LinkButton>
                                <asp:ImageButton ID="CerrarIcon" runat="server" ImageUrl="images/iconos/logout.png"  OnClick="RedirectImagenCer"/>
                                 <li></li>
                                 <!-- Traductor google -->
