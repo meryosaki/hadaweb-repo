@@ -18,7 +18,7 @@ background: white;
 -webkit-border-radius: 100px;
 border-radius: 5px;
 }</style>
-                            <p></p><p></p>
+                            <p></p>
                             <div align="center">
                             <img src="images/avatar.png" alt="" />
                             <p></p>
