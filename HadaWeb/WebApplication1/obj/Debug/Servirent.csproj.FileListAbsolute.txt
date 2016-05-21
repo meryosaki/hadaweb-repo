@@ -38,3 +38,11 @@ C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWe
 C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
 C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
+C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
