@@ -21,10 +21,7 @@ border-radius: 5px;
                             <p></p><p></p>
                             <div align="center">
                             <img src="images/avatar02.png.jpg" alt="" />
-                            <p></p>
-                            <form enctype="multipart/form-data" action="" method="POST">
-<input class="button nopopup" type="file" name="uploadedfile" value="Seleccione imagen"/>
-</form>
+
                             <p></p>
                             </div>
                             <p></p>
@@ -48,11 +45,11 @@ border-radius: 5px;
 									
 									</li><li>
 										<span><strong>Nombre completo</strong></span>
-                                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                                        <p><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
 									</li>
                                     <li>
 										<span><strong>Dirección de E-mail</strong></span>
-                                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                                       <p> <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></p>
 									</li>
                                 <a href="misdatoseditar.aspx" class="button">Editar mis datos</a>
                                 <a href="mipasseditar.aspx" class="button">Cambiar contraseña</a>
