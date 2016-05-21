@@ -54,10 +54,10 @@ border-radius: 5px;
                                         </asp:CustomValidator>
 									</li><li>
 										<label><strong>Nombre completo</strong></label>
-                                        <asp:TextBox ID="Nombre" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Text2" runat="server"></asp:TextBox>
 									</li><li>
 										<label><strong>Dirección de E-mail</strong></label>
-                                        <asp:TextBox ID="Email" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Text3" runat="server"></asp:TextBox>
 									</li>
 								</ul>
             

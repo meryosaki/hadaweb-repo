@@ -23,8 +23,3 @@ C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\HadaWeb\bin\Debug\HadaWeb.pdb
 C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.dll
 C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.pdb
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\HadaWeb\bin\Debug\HadaWeb.dll
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\HadaWeb\bin\Debug\HadaWeb.pdb
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.csprojResolveAssemblyReference.cache
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.dll
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\HadaWeb\obj\Debug\HadaWeb.pdb
