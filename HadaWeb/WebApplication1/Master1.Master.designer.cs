@@ -85,15 +85,6 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.LinkButton Identificarse;
         
         /// <summary>
-        /// Control Carrito.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Carrito;
-        
-        /// <summary>
         /// Control Cuenta.
         /// </summary>
         /// <remarks>
@@ -103,6 +94,33 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.LinkButton Cuenta;
         
         /// <summary>
+        /// Control IdentificarseIcon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton IdentificarseIcon;
+        
+        /// <summary>
+        /// Control Carrito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton Carrito;
+        
+        /// <summary>
+        /// Control CarritoIcon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton CarritoIcon;
+        
+        /// <summary>
         /// Control Cerrar.
         /// </summary>
         /// <remarks>
@@ -110,6 +128,15 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton Cerrar;
+        
+        /// <summary>
+        /// Control CerrarIcon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton CerrarIcon;
         
         /// <summary>
         /// Control ContentPlaceHolder1.
