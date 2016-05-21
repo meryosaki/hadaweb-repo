@@ -13,6 +13,51 @@ namespace WebApplication1
         {
             if (Session["USER"] == null)
             {
+                Carrito.Visible = false;
+                Cuenta.Visible = false;
+            }
+           
+        }
+
+        public void RedirectIdentificarse(object sender, EventArgs e)
+        {
+            Response.Redirect("~/identificarse.aspx");
+        }
+        public void RedirectInicio(object sender, EventArgs e)
+        {
+            Response.Redirect("~/inicio.aspx");
+        }
+
+        public void RedirectQsomos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/quienes.aspx");
+        }
+        public void RedirectAviso(object sender, EventArgs e)
+        {
+            Response.Redirect("~/avisolegal.aspx");
+        }
+        public void RedirectCursos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/cursos.aspx");
+        }
+        public void RedirectOfertas(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ofertas.aspx");
+        }
+        public void RedirectComo(object sender, EventArgs e)
+        {
+            Response.Redirect("~/comprar.aspx");
+        }
+      
+
+
+
+
+        /**
+         * protected void Page_Load(object sender, EventArgs e)
+        {
+          if (Session["USER"] == null)
+            {
                 Identificate.Visible = true;
                 Salir.Visible = false;
                 Carrito.Visible = false;
@@ -23,7 +68,8 @@ namespace WebApplication1
                 Salir.Visible = true;
                 Carrito.Visible = true;
             }
-        }
+         }
+      
         public void InicioRedirect(object sender, EventArgs e)
         {
             Response.Redirect("~/inicio.aspx");
@@ -64,5 +110,6 @@ namespace WebApplication1
             Response.Redirect("~/micarrito.aspx");
         
         }
+         * */
     }
 }
