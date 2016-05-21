@@ -29,11 +29,8 @@
                              </strong></font><a align=right href="#" class="button">Comprar</a></p>
                             <!-- FIN CODIGO VISOR DE IMAGENES --> 
                            </div><div><strong>
-                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="Button" runat="server" Text="¡Reserva ya!">
-</asp:LinkButton>
-                               
-                               
-                               <a href="misreservas.aspx">!Reserva ya!</a></strong>
+                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="ButtonReserva" runat="server" OnClick ="ButtonReservar" Text="¡Reserva ya!">
+</asp:LinkButton></strong>
                            </div>
                            <div align="justify">
 
