@@ -31,22 +31,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorNick;
         
         /// <summary>
-        /// Control Text2.
+        /// Control Nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text2;
+        protected global::System.Web.UI.WebControls.TextBox Nombre;
         
         /// <summary>
-        /// Control Text3.
+        /// Control Email.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Text3;
+        protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
         /// Control Button1.
