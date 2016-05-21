@@ -83,7 +83,7 @@ namespace WebApplication1
         }
         public void RedirectComo(object sender, EventArgs e)
         {
-            Response.Redirect("~/comprar.aspx");
+            Response.Redirect("~/comocomprar.aspx");
         }
     }
 }
