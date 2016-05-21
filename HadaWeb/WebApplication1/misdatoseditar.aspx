@@ -8,7 +8,7 @@
                                 <hr size="4px" width="100%" align="center" color="white"/>
 							</ul>
 							<div class="row no-collapse-1">
-                            <p></p><p></p><p></p><p></p>
+                            <p></p><p></p>
 <style>
 .box-white {
 margin:20 20 20px;
