@@ -52,15 +52,18 @@
                                 <li><a href="avisolegal.aspx" runat="server">Aviso legal</a></li>
                                 <li>|</li>
                                 -->
-                                <asp:LinkButton ID="Identificarse" runat="server" OnClick="RedirectIdentificarse" ForeColor="White"  Font-Underline="false" >Identifícate</asp:LinkButton>
+                                
 
-                                <img src="images/iconos/barra02.png"/><li class="active"><a href="identificarse.aspx" runat="server"></a></li> 
+                                
+                              <asp:LinkButton ID="Identificarse" runat="server" OnClick="RedirectIdentificarse" ForeColor="White"  Font-Underline="false" >Identifícate</asp:LinkButton>
+                                 <asp:LinkButton ID="Cuenta" runat="server"  ForeColor="White" OnClick="RedirectCuenta"  Font-Underline="false" >Mi Cuenta</asp:LinkButton>
+                                <asp:ImageButton ID="IdentificarseIcon" runat="server" ImageUrl="images/iconos/barra02.png" OnClick="RedirectImagenIde" />
+                                <li></li>
                                 <asp:LinkButton ID="Carrito" runat="server"  ForeColor="White"  Font-Underline="false" >Carrito</asp:LinkButton>
-
-                                <img src="images/iconos/carrito07.png"/><li class="active"><a href="micarrito.aspx" runat="server"></a></li>
-                                 <asp:LinkButton ID="Cuenta" runat="server"  ForeColor="White"  Font-Underline="false" >Mi Cuenta</asp:LinkButton>
-                                <img src="images/iconos/logout.png"/><li class="active"><a href="identificarse.aspx" runat="server"></a></li>
-                                 <asp:LinkButton ID="Cerrar" runat="server"  ForeColor="White"  Font-Underline="false" >Carrito</asp:LinkButton>
+                               <asp:ImageButton ID="CarritoIcon" runat="server" ImageUrl="images/iconos/carrito07.png"  OnClick="RedirectImagenCar"/>
+                                <li></li>
+                                <asp:LinkButton ID="Cerrar" runat="server"  ForeColor="White"  Font-Underline="false" >Cerrar Sesión</asp:LinkButton>
+                               <asp:ImageButton ID="CerrarIcon" runat="server" ImageUrl="images/iconos/logout.png"  OnClick="RedirectImagenCer"/>
                                 
                                 <!-- Traductor google -->
                                 <p></p>
