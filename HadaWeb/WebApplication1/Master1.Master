@@ -95,24 +95,24 @@
 					<form method="post" action="#">
 						<div class="row half">
 							<div class="12u">
-								<input class="text" type="text" name="name" id="name" placeholder="Nombre" />
+                                <asp:TextBox ID="NickSend" Text="Nick" runat="server"> </asp:TextBox>
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
-								<input class="text" type="text" name="email" id="email" placeholder="Email" />
+                                <asp:TextBox ID="EmailSend" Text="Email" runat="server"> </asp:TextBox>							
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
-								<textarea name="message" id="message" placeholder="Mensaje"></textarea>
+                                <asp:TextBox name="Mensaje" ID="Mensaje" Text="Mensaje" runat="server" ></asp:TextBox>								
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
 								<ul class="actions">
 									<li>
-										<input type="submit" value="Enviar mensaje" class="button alt" />
+                                        <asp:Button id="ButtonEmail" runat="server" OnClick="SendMail" Text="Enviar"></asp:Button> 
 									</li>
 								</ul>
 							</div>
