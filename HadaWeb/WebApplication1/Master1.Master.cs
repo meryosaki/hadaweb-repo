@@ -53,7 +53,6 @@ namespace WebApplication1
                 }
             }
 
-<<<<<<< HEAD
         }
 
 
@@ -106,29 +105,10 @@ namespace WebApplication1
         public void RedirectCarrito(object sender, EventArgs e)
         {
             Response.Redirect("~/micarrito.aspx");
-=======
->>>>>>> refs/remotes/origin/master
         }
 
 
-        public void RedirectImagenCer(object sender, EventArgs e)
-        {
-            if (Session["USER"] != null)
-            {
-                Session["USER"] = null;
-            }
-            if (Session["PROFFESOR"] != null)
-            {
-                Session["PROFFESOR"] = null;
-            }
-            Response.Redirect("~/identificarse.aspx");
-        }
-
-        public void RedirectCuenta(object sender, EventArgs e)
-        {
-<<<<<<< HEAD
-            Response.Redirect("~/avisolegal.aspx");
-        }
+        
         public void RedirectCursos(object sender, EventArgs e)
         {
             Response.Redirect("~/cursos.aspx");
@@ -141,6 +121,7 @@ namespace WebApplication1
         {
             Response.Redirect("~/comocomprar.aspx");
         }
+        
         public void SendMail(object sender, EventArgs e)
         {
             String MensajeCorreo = Mensaje.Text;
@@ -175,43 +156,7 @@ namespace WebApplication1
             }
         }
 
-
-=======
-            if (Session["USER"] != null)
-            {
-                Response.Redirect("~/micuenta.aspx");
-            }
-            else
-            {
-                if (Session["PROFFESOR"] != null)
-                {
-                    Response.Redirect("~/profesorcuenta.aspx");
-                }
-            }
-            
-        }
-
-        public void RedirectImagenIde(object sender, EventArgs e)
-        {
-            if (Session["USER"] == null)
-            {
-                Response.Redirect("~/identificarse.aspx");
-            }
-            else
-            {
-                Response.Redirect("~/micuenta.aspx");
-            }
-        }
-
-        public void RedirectImagenCar(object sender, EventArgs e)
-        {
-            Response.Redirect("~/micarrito.aspx");
-        }
-
-        public void RedirectCarrito(object sender, EventArgs e)
-        {
-            Response.Redirect("~/micarrito.aspx");
-        }
+        
 
         public void RedirectIdentificarse(object sender, EventArgs e)
         {
@@ -230,19 +175,6 @@ namespace WebApplication1
         {
             Response.Redirect("~/avisolegal.aspx");
         }
-        public void RedirectCursos(object sender, EventArgs e)
-        {
-            Response.Redirect("~/cursos.aspx");
-        }
-        public void RedirectOfertas(object sender, EventArgs e)
-        {
-            Response.Redirect("~/ofertas.aspx");
-        }
-        public void RedirectComo(object sender, EventArgs e)
-        {
-            Response.Redirect("~/comocomprar.aspx");
-        }
->>>>>>> refs/remotes/origin/master
     }
 }
       
