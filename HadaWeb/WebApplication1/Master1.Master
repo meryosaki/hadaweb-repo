@@ -95,24 +95,40 @@
 					<form method="post" action="#">
 						<div class="row half">
 							<div class="12u">
+<<<<<<< HEAD
                                 <asp:TextBox ID="NickSend" Text="Nick" runat="server"> </asp:TextBox>
+=======
+								<input class="text" type="text" name="name" id="name" placeholder="Nombre" />
+>>>>>>> refs/remotes/origin/master
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
+<<<<<<< HEAD
                                 <asp:TextBox ID="EmailSend" Text="Email" runat="server"> </asp:TextBox>							
+=======
+								<input class="text" type="text" name="email" id="email" placeholder="Email" />
+>>>>>>> refs/remotes/origin/master
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
+<<<<<<< HEAD
                                 <asp:TextBox name="Mensaje" ID="Mensaje" Text="Mensaje" runat="server" ></asp:TextBox>								
+=======
+								<textarea name="message" id="message" placeholder="Mensaje"></textarea>
+>>>>>>> refs/remotes/origin/master
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
 								<ul class="actions">
 									<li>
+<<<<<<< HEAD
                                         <asp:Button id="ButtonEmail" runat="server" OnClick="SendMail" Text="Enviar"></asp:Button>
+=======
+										<input type="submit" value="Enviar mensaje" class="button alt" />
+>>>>>>> refs/remotes/origin/master
 									</li>
 								</ul>
 							</div>
