@@ -14,7 +14,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //primero controlo cuando los dos son nulos, es decir, no me he logeado
+            //primero controlo cuando los dos son nulos, es decir, no me he logeado 
             if (Session["USER"] == null)
             {
                 if (Session["PROFFESOR"] == null)
