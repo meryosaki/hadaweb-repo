@@ -13,5 +13,31 @@ namespace WebApplication1
         {
 
         }
+        protected void boton_Click(object sender, EventArgs e)
+        {
+            Button boton = (Button)sender;
+
+            if (boton != null)
+            {
+                switch (boton.Text)
+                {
+                    case "ajedrezdamas": Response.Redirect("oferta-ajedrezdamas.aspx");
+                        break;
+                    case "badmintonbalon": Response.Redirect("oferta-badmintonbalon.aspx");
+                        break;
+                    case "biologiaquimica": Response.Redirect("oferta-biologiaquimica.aspx");
+                        break;
+                    case "buceonatacion": Response.Redirect("oferta-buceonatacion.aspx");
+                        break;
+                    case "matefisica": Response.Redirect("oferta-matefisica.aspx");
+                        break;
+                    case "fotophotoshop": Response.Redirect("oferta-fotophotoshop.aspx");
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        }
     }
 }

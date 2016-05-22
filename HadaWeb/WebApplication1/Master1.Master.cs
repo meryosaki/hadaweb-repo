@@ -11,43 +11,19 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //primero controlo cuando los dos son nulos, es decir, no me he logeado
             if (Session["USER"] == null)
             {
-                if (Session["PROFFESOR"] == null)
-                {
-                    Cuenta.Visible = false;
-                    Identificarse.Visible = true;
-                    IdentificarseIcon.Visible = true;
-                    Cerrar.Visible = false;
-                    Carrito.Visible = false;
-                    CerrarIcon.Visible = false;
-                    CarritoIcon.Visible = false;
-                }
-                //ahora controlo cuando me logeo como profesor
-                if (Session["PROFFESOR"] != null)
-                {
-                    Cuenta.Visible = true;
-                    Identificarse.Visible = false;
-                    IdentificarseIcon.Visible = true;
-                    Cerrar.Visible = true;
-                    Carrito.Visible = false;
-                    CerrarIcon.Visible = true;
-                    CarritoIcon.Visible = false;
-                }
+                Carrito.Visible = false;
+                Cuenta.Visible = false;
+                Cerrar.Visible = false;
+                CerrarIcon.Visible = false;
+                CarritoIcon.Visible = false;
+
             }
-            else{
-                //ahora controlo cuando me logio como cliente
-                if (Session["PROFFESOR"] == null)
-                {
-                    Cuenta.Visible = true;
-                    Identificarse.Visible = false;
-                    IdentificarseIcon.Visible = true;
-                    Cerrar.Visible = true;
-                    Carrito.Visible = true;
-                    CerrarIcon.Visible = true;
-                    CarritoIcon.Visible = true;
-                }
+            else
+            {
+                Identificarse.Visible = false;
+
             }
 
         }
@@ -55,31 +31,12 @@ namespace WebApplication1
 
         public void RedirectImagenCer(object sender, EventArgs e)
         {
-            if (Session["USER"] != null)
-            {
-                Session["USER"] = null;
-            }
-            if (Session["PROFFESOR"] != null)
-            {
-                Session["PROFFESOR"] = null;
-            }
             Response.Redirect("~/identificarse.aspx");
         }
 
         public void RedirectCuenta(object sender, EventArgs e)
         {
-            if (Session["USER"] != null)
-            {
-                Response.Redirect("~/micuenta.aspx");
-            }
-            else
-            {
-                if (Session["PROFFESOR"] != null)
-                {
-                    Response.Redirect("~/profesorcuenta.aspx");
-                }
-            }
-            
+            Response.Redirect("~/micuenta.aspx");
         }
 
         public void RedirectImagenIde(object sender, EventArgs e)
