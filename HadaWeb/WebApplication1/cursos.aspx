@@ -103,7 +103,7 @@
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre] FROM [curso]"></asp:SqlDataSource>
                             </columns>
 
-
+                            <asp:Label ID ="prueba" Text="" runat="server"></asp:Label>
        
                             <div>
                             <p></p>
