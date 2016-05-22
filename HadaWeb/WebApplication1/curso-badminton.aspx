@@ -58,7 +58,8 @@
                             <p>Al mismo tiempo que el alumno participa en una actividad cuyos componentes
                             específicos son en su primera fase, de fácil ejecución, asegurando la motivación y la
                             recreación, va adquiriendo unos recursos motrices tanto globales como específicos que
-                            lo conducirán a un incremento de su bagaje motriz.</p>
+                            lo conducirán a un incremento de su bagaje motriz.</p>
+
  	<p><strong><a>Instalaciones:</a> 	 
  	
 	 Pabellon municipal (Aspe) / 
