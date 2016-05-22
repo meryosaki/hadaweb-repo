@@ -14,58 +14,127 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //primero controlo cuando los dos son nulos, es decir, no me he logeado
             if (Session["USER"] == null)
             {
-                Identificate.Visible = true;
-                Salir.Visible = false;
-                Carrito.Visible = false;
+                if (Session["PROFFESOR"] == null)
+                {
+                    Cuenta.Visible = false;
+                    Identificarse.Visible = true;
+                    IdentificarseIcon.Visible = true;
+                    Cerrar.Visible = false;
+                    Carrito.Visible = false;
+                    CerrarIcon.Visible = false;
+                    CarritoIcon.Visible = false;
+                }
+                //ahora controlo cuando me logeo como profesor
+                if (Session["PROFFESOR"] != null)
+                {
+                    Cuenta.Visible = true;
+                    Identificarse.Visible = false;
+                    IdentificarseIcon.Visible = true;
+                    Cerrar.Visible = true;
+                    Carrito.Visible = false;
+                    CerrarIcon.Visible = true;
+                    CarritoIcon.Visible = false;
+                }
             }
-            else
-            {
-                Identificate.Visible = false;
-                Salir.Visible = true;
-                Carrito.Visible = true;
+            else{
+                //ahora controlo cuando me logio como cliente
+                if (Session["PROFFESOR"] == null)
+                {
+                    Cuenta.Visible = true;
+                    Identificarse.Visible = false;
+                    IdentificarseIcon.Visible = true;
+                    Cerrar.Visible = true;
+                    Carrito.Visible = true;
+                    CerrarIcon.Visible = true;
+                    CarritoIcon.Visible = true;
+                }
             }
+
         }
-        public void InicioRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/inicio.aspx");
-        }
-        public void CursosRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/cursos.aspx");
-        }
-        public void OfertasRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/ofertas.aspx");
-        }
-        public void ComprarRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/comprar.aspx");
-        }
-        public void QuienesRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/quienes.aspx");
-        }
-        public void AvisoRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/avisolegal.aspx");
-        }
-        public void IdentificateRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/identificarse.aspx");
-        }
-        public void SalirRedirect(object sender, EventArgs e)
+
+
+        public void RedirectImagenCer(object sender, EventArgs e)
         {
             if (Session["USER"] != null)
             {
                 Session["USER"] = null;
             }
+            if (Session["PROFFESOR"] != null)
+            {
+                Session["PROFFESOR"] = null;
+            }
+            Response.Redirect("~/identificarse.aspx");
+        }
+
+        public void RedirectCuenta(object sender, EventArgs e)
+        {
+            if (Session["USER"] != null)
+            {
+                Response.Redirect("~/micuenta.aspx");
+            }
+            else
+            {
+                if (Session["PROFFESOR"] != null)
+                {
+                    Response.Redirect("~/profesorcuenta.aspx");
+                }
+            }
+            
+        }
+
+        public void RedirectImagenIde(object sender, EventArgs e)
+        {
+            if (Session["USER"] == null)
+            {
+                Response.Redirect("~/identificarse.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/micuenta.aspx");
+            }
+        }
+
+        public void RedirectImagenCar(object sender, EventArgs e)
+        {
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        public void RedirectCarrito(object sender, EventArgs e)
+        {
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        public void RedirectIdentificarse(object sender, EventArgs e)
+        {
+            Response.Redirect("~/identificarse.aspx");
+        }
+        public void RedirectInicio(object sender, EventArgs e)
+        {
             Response.Redirect("~/inicio.aspx");
         }
-        public void CarritoRedirect(object sender, EventArgs e) {
-            Response.Redirect("~/micarrito.aspx");
-        
+
+        public void RedirectQsomos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/quienes.aspx");
+        }
+        public void RedirectAviso(object sender, EventArgs e)
+        {
+            Response.Redirect("~/avisolegal.aspx");
+        }
+        public void RedirectCursos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/cursos.aspx");
+        }
+        public void RedirectOfertas(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ofertas.aspx");
+        }
+        public void RedirectComo(object sender, EventArgs e)
+        {
+            Response.Redirect("~/comocomprar.aspx");
         }
         public void SendMail(object sender, EventArgs e)
         {
@@ -85,7 +154,7 @@ namespace WebApplication1
                 mail.Body = MensajeCorreo;
                 //Especificamos a quien enviaremos el Email, no es necesario que sea Gmail, puede ser cualquier otro proveedor
                 mail.To.Add("servirentweb@gmail.com");
-               
+
 
                 //Configuracion del SMTP
                 SmtpServer.Port = 587; //Puerto que utiliza Gmail para sus servicios
@@ -93,12 +162,18 @@ namespace WebApplication1
                 SmtpServer.Credentials = new System.Net.NetworkCredential("servirentweb@gmail.com", "Hada1234");
                 SmtpServer.EnableSsl = true;
                 SmtpServer.Send(mail);
-                
+
             }
             catch (Exception ex)
             {
                 Response.Redirect("~/identificarse.aspx");
             }
         }
+
+
     }
 }
+      
+
+
+

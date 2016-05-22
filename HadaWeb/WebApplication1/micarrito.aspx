@@ -49,10 +49,9 @@
                                     
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
                                         <Columns>
-                                            <asp:ImageField DataImageUrlField="avatar" DataImageUrlFormatString="~/images/{0}" HeaderText=" Imagen " ControlStyle-Width="100px" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
-                                            </asp:ImageField>
-                                            <asp:BoundField DataField="nombre" HeaderText=" Nombre del artículo " SortExpression="nombre" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle"/>
-                                            <asp:BoundField DataField="precio" HeaderText=" Precio " SortExpression="precio" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle"/>
+                                            <asp:BoundField DataField="avatar" HeaderText="avatar" SortExpression="avatar" />
+                                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
+                                            <asp:BoundField DataField="precio" HeaderText="precio" SortExpression="precio" />
                                         </Columns>
                                     </asp:GridView>   
                                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre], [precio] FROM [pedido], [curso] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([curso] = [idCurso])">
@@ -63,7 +62,7 @@
                                 <td align="right"><strong> Importe total </strong></td>
                                 </tr>
                                 <tr>
-                                  <td align="right"><strong><font face="arial"><asp:Label ID="Importe" runat="server" Text="Label"></asp:Label> € </font></strong></td>
+                                  <td align="right"><strong><font face="arial"> 67€ </font></strong></td>
                                 </tr>
                                 
 

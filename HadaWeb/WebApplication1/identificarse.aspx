@@ -38,6 +38,7 @@ border-radius: 5px;
 	<div class="caja-modal">      
 <ul class="style">
     <h3>ENTRAR</h3><p></p>
+    <label for="LoginForm_email" class="required"><span class="required">Usuario</span></label>
               <asp:TextBox ID="login" runat="server" Text=""></asp:TextBox>
     			<div class="inputtext-fancy"></div>
     <asp:RegularExpressionValidator ID="RegularLoginNick" runat="server" 
@@ -48,6 +49,7 @@ border-radius: 5px;
 
     </asp:RegularExpressionValidator>
     <p></p>
+    <label for="LoginForm_email" class="required"><span class="required">Contraseña</span></label>
             <asp:TextBox ID="password" runat="server" type="password" Text=""></asp:TextBox>
 						<div class="inputtext-fancy">
                             <asp:Button ID="Entrar" runat="server" Text="Entrar" onclick="crearCliente"/>
