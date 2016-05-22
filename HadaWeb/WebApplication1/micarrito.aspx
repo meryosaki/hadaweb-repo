@@ -72,6 +72,7 @@
                                 </table>
  
 								</ul>
+                                <asp:Button ID="ConfirmarPedido" runat="server" Text="Confirmar pedido" Onclick="confirmarP"/>
 								<a href="misdatos.aspx" class="button">Confirmar pedido</a> 
 
 							</fieldset></div>

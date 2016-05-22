@@ -27,5 +27,10 @@ namespace WebApplication1
         {
 
         }
+        protected void confirmarP(object sender, EventArgs e)
+        {
+            string nombre = Session["USER"].ToString();
+            Response.Redirect("~/misdatos.aspx");
+        }
     }
 }
