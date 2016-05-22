@@ -4,7 +4,7 @@
 //
 //     Los cambios en este archivo podrían causar un comportamiento incorrecto y se perderán si
 //     se vuelve a generar el código. 
-// </generado automáticamente>
+// </generado automáticamente> 
 //------------------------------------------------------------------------------
 
 namespace WebApplication1 {

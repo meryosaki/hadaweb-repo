@@ -28,7 +28,7 @@ namespace WebApplication1
                     CarritoIcon.Visible = false;
                 }
                 //ahora controlo cuando me logeo como profesor
-                if (Session["PROFFESOR"] != null)
+                if (Session["PROFFESOR"] != null) 
                 {
                     Cuenta.Visible = true;
                     Identificarse.Visible = false;
