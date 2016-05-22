@@ -12,56 +12,56 @@ namespace PracticaGrupalHADA
         private int idUsuario;
         private string email, nick, nombre, apellidos, contrasenya, telefono, avatar;
         private Nullable<DateTime> f_nacimiento;
-        private UsuarioCAD usuario_cad; 
+        private UsuarioCAD usuario_cad;
 
         public int IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }
         }
-        
+
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
-        
+
         public string Nick
         {
             get { return nick; }
             set { nick = value; }
         }
-        
+
         public string Nombre
         {
             get { return nombre; }
             set { nombre = value; }
         }
-        
+
         public string Apellidos
         {
             get { return apellidos; }
             set { apellidos = value; }
         }
-        
+
         public string Contrasenya
         {
             get { return contrasenya; }
             set { contrasenya = value; }
         }
-        
+
         public Nullable<DateTime> F_nacimiento
         {
             get { return f_nacimiento; }
             set { f_nacimiento = value; }
         }
-        
+
         public string Telefono
         {
             get { return telefono; }
             set { telefono = value; }
         }
-        
+
         public string Avatar
         {
             get { return avatar; }
@@ -85,15 +85,28 @@ namespace PracticaGrupalHADA
         {
             asignar(0, "", "", "", "", "", "", "", null);
         }
-
+        //añado esta funcion para poder crear un usuario a partir de un id
+        public UsuarioEN(int idUsuario)
+        {
+            this.IdUsuario = idUsuario;
+            this.email = "";
+            this.nick = "";
+            this.nombre = "";
+            this.apellidos = "";
+            this.contrasenya = "";
+            this.telefono = "";
+            this.avatar = "";
+            this.f_nacimiento = null;
+        }
         public UsuarioEN(int idUsuario, string email, string nick, string nombre, string apellidos, string contrasenya, string telefono, string avatar, Nullable<DateTime> f_nacimiento)
         {
             asignar(idUsuario, email, nick, nombre, apellidos, contrasenya, telefono, avatar, f_nacimiento);
         }
 
-        public virtual void insertar_usuario() 
+        public virtual void insertar_usuario()
         {
-            try {
+            try
+            {
                 usuario_cad = new UsuarioCAD();
                 usuario_cad.insertar_usuario(this);
             }
@@ -101,11 +114,13 @@ namespace PracticaGrupalHADA
             {
                 Console.WriteLine("Error creando Usuario: %s\n", e);
             }
-            
+
         }
 
-        public virtual void borrar_usuario() {
-            try{
+        public virtual void borrar_usuario()
+        {
+            try
+            {
                 usuario_cad = new UsuarioCAD();
                 usuario_cad.borrar_usuario(this.idUsuario);
             }
@@ -147,7 +162,7 @@ namespace PracticaGrupalHADA
             {
                 usuario_cad = new UsuarioCAD();
                 idUsuario = usuario_cad.Last_ID();
- 
+
             }
             catch (Exception e)
             {
@@ -155,15 +170,28 @@ namespace PracticaGrupalHADA
             }
         }
 
-        public bool ComprobarNick(string nick) {
+        public bool ComprobarNick(string nick)
+        {
             UsuarioCAD usuario_cad = new UsuarioCAD();
             return usuario_cad.comprobarNick(nick);
         }
 
         public bool comprobarNickContrasenya()
         {
-            UsuarioCAD cad = new UsuarioCAD();
-            return cad.comprobarNickContrasenya(nick, contrasenya);
+            /*codigo anterior, al nuevo le he añadido el bloque try catch,el auxiliar es para que pueda compilar
+             * UsuarioCAD cad = new UsuarioCAD();
+             return cad.comprobarNickContrasenya(nick, contrasenya);*/
+            bool aux = false; ;
+            try
+            {
+                UsuarioCAD cad = new UsuarioCAD();
+                aux = cad.comprobarNickContrasenya(nick, contrasenya);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error iniciando sesion como Cliente: %s\n", e);
+            }
+            return aux;
         }
         public void recuperarId_EN()
         {
@@ -177,6 +205,21 @@ namespace PracticaGrupalHADA
                 Console.WriteLine("Error recuperando ID: %s\n", e);
             }
 
+        }
+        //funcion que a partir de un id me dice si existe ese cliente
+        public bool comprobarUsuarioClienteEN()
+        {
+            bool aux = false; ;
+            try
+            {
+                UsuarioCAD cad = new UsuarioCAD();
+                aux = cad.comprobarUsuarioClienteCAD(IdUsuario);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error iniciando sesion como Profesor: %s\n", e);
+            }
+            return aux;
         }
 
     }

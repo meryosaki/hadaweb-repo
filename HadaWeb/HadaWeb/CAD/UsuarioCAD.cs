@@ -16,10 +16,10 @@ namespace PracticaGrupalHADA
 
         //Datos del CAD.
 
-       private String BDD;
-       private UsuarioEN usuario;
-       private ArrayList AlmacenUsuarios;
-       private SqlConnection conex;
+        private String BDD;
+        private UsuarioEN usuario;
+        private ArrayList AlmacenUsuarios;
+        private SqlConnection conex;
 
 
 
@@ -76,22 +76,25 @@ namespace PracticaGrupalHADA
         {
             UsuarioEN us = new UsuarioEN();
             SqlDataReader dr;
-            try{
-            conex.Open();
-            string operation = "Select * from usuario where idUsuario = " + id;
-            SqlCommand com = new SqlCommand(operation, conex);
-            dr = com.ExecuteReader();
-            dr.Read();
-            dr.Close();
+            try
+            {
+                conex.Open();
+                string operation = "Select * from usuario where idUsuario = " + id;
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                dr.Close();
             }
             //return dr;
-            catch (Exception e) {
+            catch (Exception e)
+            {
 
             }
-            finally{
+            finally
+            {
                 conex.Close();
-                
-            }    
+
+            }
             return us;
         }
 
@@ -106,12 +109,13 @@ namespace PracticaGrupalHADA
                 SqlCommand com = new SqlCommand(operation, conex);
                 dr = com.ExecuteReader();
                 dr.Read();
-                if(dr.HasRows){
+                if (dr.HasRows)
+                {
                     id = dr.GetInt32(0);
                     id++;
-               }
-               else 
-                   id = 1;                
+                }
+                else
+                    id = 1;
                 dr.Close();
             }
             catch (Exception e)
@@ -134,10 +138,11 @@ namespace PracticaGrupalHADA
             string operation = "Select * from usuario";
             SqlCommand com = new SqlCommand(operation, conex);
             dr = com.ExecuteReader();
-            while (dr.Read() && unico == true){
+            while (dr.Read() && unico == true)
+            {
                 string nickAux = dr["nick"].ToString();
                 if (nick == nickAux)
-                    unico = false;                  
+                    unico = false;
             }
             dr.Close();
             conex.Close();
@@ -221,9 +226,28 @@ namespace PracticaGrupalHADA
             }
             return usuario;
         }
+        public bool comprobarUsuarioClienteCAD(int Id)
+        {
+            bool existe = false;
+            SqlDataReader dr;
+            conex.Open();
+            string operation = "Select * from cliente";
+            SqlCommand com = new SqlCommand(operation, conex);
+            dr = com.ExecuteReader();
+            while (dr.Read() && existe == false)
+            {
+                int IdAux = Int32.Parse(dr["idCliente"].ToString());
+                if (Id == IdAux)
+                {
+                    existe = true;
+                }
+            }
+            dr.Close();
+            conex.Close();
+            return existe;
+        }
     }
 }
-
 
 
 
