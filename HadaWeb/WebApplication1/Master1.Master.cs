@@ -37,7 +37,7 @@ namespace WebApplication1
                 }
             }
             else{
-                //ahora controlo cuando me logio como cliente
+                //ahora controlo cuando me logeo como cliente
                 if (Session["PROFFESOR"] == null)
                 {
                     Cuenta.Visible = true;

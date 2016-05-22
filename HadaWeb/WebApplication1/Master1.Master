@@ -44,14 +44,7 @@
                                 <li><asp:LinkButton ID="Qsomos" runat="server" ForeColor="White"  OnClick="RedirectQsomos"  Font-Underline="false">Quiénes somos</asp:LinkButton></li>
                                 <li><asp:LinkButton ID="AvisoLegal" runat="server" ForeColor="White"  OnClick="RedirectAviso"   Font-Underline="false">Aviso legal</asp:LinkButton></li>
                              
-						       <!-- <li class="active"><a href="inicio.aspx">Inicio</a></li>
-						        <li><a href="cursos.aspx" runat="server">Cursos</a></li>
-                                <li><a href="ofertas.aspx" runat="server">Ofertas</a></li>
-                                <li><a href="comocomprar.aspx" runat="server">Cómo comprar</a></li>
-						        <li><a href="quienes.aspx" runat="server">Quiénes somos</a></li>
-                                <li><a href="avisolegal.aspx" runat="server">Aviso legal</a></li>
-                                <li>|</li>
-                                -->
+						    
                                 
                                 <li>|</li>
                                 

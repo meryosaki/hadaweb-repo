@@ -17,9 +17,9 @@ namespace WebApplication1
                 us.Nick = Session["USER"].ToString();
                 us.mostrar_usuario();
 
-                Label1.Text = us.Nick;
-                Label2.Text = us.Nombre; ;
-                Label3.Text = us.Email;
+                Nick.Text = us.Nick;
+                Nombre.Text = us.Nombre; ;
+                Email.Text = us.Email;
             }
             else
                 Response.Redirect("~/inicio.aspx");

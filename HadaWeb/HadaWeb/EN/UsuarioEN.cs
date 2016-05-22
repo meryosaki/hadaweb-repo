@@ -135,12 +135,12 @@ namespace PracticaGrupalHADA
             try
             {
                 usuario_cad = new UsuarioCAD();
-                usuario_cad.modificar_usuario(this);
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error creando Usuario: %s\n", e);
             }
+            usuario_cad.modificar_usuario(this);
         }
 
         public virtual UsuarioEN mostrar_usuario()
