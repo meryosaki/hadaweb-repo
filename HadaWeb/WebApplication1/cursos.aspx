@@ -3,14 +3,14 @@
     <div id="extra">
 						<div class="container">
                         <strong>Selecciona una categoría:</strong>
-                        <select name="OS">
-                           <option value="1">Estudios</option> 
-                           <option value="2">Cocina</option> 
-                           <option value="3">Ocio y cultura</option>
-                           <option value="10">Deportes</option> 
-                           <option value="11">Gabinete psicológico</option> 
-                           <option value="12">Otros</option> 
-                        </select>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem Selected="True" Value="Estudios"></asp:ListItem>
+                            <asp:ListItem Value="Cocina"></asp:ListItem>
+                            <asp:ListItem Value="Ocio y cultura"></asp:ListItem>
+                            <asp:ListItem Value="Deportes"></asp:ListItem>
+                            <asp:ListItem Value="Gabinete psicológico"></asp:ListItem>
+                            <asp:ListItem Value="Otros"></asp:ListItem>
+                        </asp:DropDownList>
 
 
                              <columns>
@@ -46,7 +46,7 @@
                                             </table>
                                         </EmptyDataTemplate>
                                         <EmptyItemTemplate>
-<td runat="server" />
+                                        <td runat="server" />
                                         </EmptyItemTemplate>
                                         <GroupTemplate>
                                             <tr id="itemPlaceholderContainer" runat="server">

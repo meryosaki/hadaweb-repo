@@ -717,7 +717,6 @@
     <Compile Include="registro.aspx.designer.cs">
       <DependentUpon>registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RoutedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HadaWeb\HadaWeb.csproj">
