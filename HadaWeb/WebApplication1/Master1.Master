@@ -35,26 +35,36 @@
 						</div>
 						<nav id="nav">
 							<ul>
-                                <asp:Button ID="Inicio" runat="server" Text="Inicio" onclick="InicioRedirect" Width="10%" Font-Size="Small"  />
-                                <asp:Button ID="Cursos" runat="server" Text="Cursos" onclick="CursosRedirect" Width="10%" Font-Size="Small"/>
-                                <asp:Button ID="Ofertas" runat="server" Text="Ofertas" onclick="OfertasRedirect" Width="10%" Font-Size="Small" />
-                                <asp:Button ID="ComoComprar" runat="server" Text="Como comprar" onclick="ComprarRedirect" Width="15%" Font-Size="Small"/>
-                                <asp:Button ID="Quienes" runat="server" Text="Quienes somos" onclick="QuienesRedirect" Width="15%" Font-Size="Small"/>
-                                <asp:Button ID="AvisoLegal" runat="server" Text="Aviso legal" onclick="AvisoRedirect" Width="13%" Font-Size="Small"/>
-                                <asp:Button ID="Identificate" runat="server" Text="Identificate" onclick="IdentificateRedirect" Width="12%" Font-Size="Small"/>
-                                <asp:Button ID="Salir" runat="server" Text="Cerrar sesion" onclick="SalirRedirect" Width="13%" Font-Size="Small"/>
-                                <asp:Button ID="Carrito" runat="server" Text="Carrito" onclick="CarritoRedirect" Width="13%" Font-Size="Small"/>
+                                
                                 <li></li>
-						        <!--<li class="active"><a href="inicio.aspx">Inicio</a></li>
+                                <li><asp:LinkButton ID="Inicio" runat="server" ForeColor="White" OnClick="RedirectInicio"  Font-Underline="false">Inicio</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="Cursos" runat="server" ForeColor="White"  OnClick="RedirectCursos"  Font-Underline="false">Cursos</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="Ofertas" runat="server" ForeColor="White"  OnClick="RedirectOfertas"  Font-Underline="false">Ofertas</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="ComoComprar" runat="server" ForeColor="White"  OnClick="RedirectComo"  Font-Underline="false">Cómo comprar</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="Qsomos" runat="server" ForeColor="White"  OnClick="RedirectQsomos"  Font-Underline="false">Quiénes somos</asp:LinkButton></li>
+                                <li><asp:LinkButton ID="AvisoLegal" runat="server" ForeColor="White"  OnClick="RedirectAviso"   Font-Underline="false">Aviso legal</asp:LinkButton></li>
+                             
+						       <!-- <li class="active"><a href="inicio.aspx">Inicio</a></li>
 						        <li><a href="cursos.aspx" runat="server">Cursos</a></li>
                                 <li><a href="ofertas.aspx" runat="server">Ofertas</a></li>
                                 <li><a href="comocomprar.aspx" runat="server">Cómo comprar</a></li>
 						        <li><a href="quienes.aspx" runat="server">Quiénes somos</a></li>
                                 <li><a href="avisolegal.aspx" runat="server">Aviso legal</a></li>
                                 <li>|</li>
-                                <img src="images/iconos/barra02.png"/><li class="active"><a href="identificarse.aspx" runat="server">Identifícate</a></li>
-                                <img src="images/iconos/carrito07.png"/><li class="active"><a href="micarrito.aspx" runat="server">Carrito</a></li>
                                 -->
+                                
+                                <li>|</li>
+                                
+                              <asp:LinkButton ID="Identificarse" runat="server" OnClick="RedirectIdentificarse" ForeColor="White"  Font-Underline="false" >Identifícate</asp:LinkButton>
+                                 <asp:LinkButton ID="Cuenta" runat="server"  ForeColor="White" OnClick="RedirectCuenta"  Font-Underline="false" >Mi Cuenta</asp:LinkButton>
+                                <asp:ImageButton ID="IdentificarseIcon" runat="server" ImageUrl="images/iconos/barra02.png" OnClick="RedirectImagenIde" />
+                                <li></li>
+                                <asp:LinkButton ID="Carrito" runat="server"  ForeColor="White"  OnClick="RedirectCarrito" Font-Underline="false" >Carrito</asp:LinkButton>
+                               <asp:ImageButton ID="CarritoIcon" runat="server" ImageUrl="images/iconos/carrito07.png"  OnClick="RedirectImagenCar"/>
+                                <li></li>
+                                <asp:LinkButton ID="Cerrar" runat="server"  ForeColor="White"  OnClick="RedirectImagenCer" Font-Underline="false" >Cerrar Sesión</asp:LinkButton>
+                               <asp:ImageButton ID="CerrarIcon" runat="server" ImageUrl="images/iconos/logout.png"  OnClick="RedirectImagenCer"/>
+                                <li></li>
                                 <!-- Traductor google -->
                                 <p></p>
 								<div id="google_translate_element"></div>
@@ -72,7 +82,9 @@
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
         </asp:ContentPlaceHolder>
-           <!-- Footer -->
+    </div>
+
+        <!-- Footer -->
 		<div id="footer" class="wrapper style2">
 			<div class="container">
 				<section>
@@ -124,7 +136,6 @@
 				</div>
 			</div>
 		</div>
-    </div>
+
         </form>
 </body>
-</html>

@@ -26,9 +26,10 @@
                              <p align=right><font align=left size=5><strong><font face="arial">Precio: 100€</font>   
                              </strong></font><a align=right href="#" class="button">Comprar</a></p>
                             <!-- FIN CODIGO VISOR DE IMAGENES --> 
-                            </div><div><strong><img src="images/iconos/estrella07.png"/><a href="misreservas.aspx">!Reserva ya!</a></strong>
-
-                          </div>
+                            </div><div><strong>
+                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="ButtonReserva" runat="server" OnClick ="ButtonReservar" Text="¡Reserva ya!">
+</asp:LinkButton></strong>
+                           </div>
 
                             <!-- aqui derecha -->
                             <div align="justify">

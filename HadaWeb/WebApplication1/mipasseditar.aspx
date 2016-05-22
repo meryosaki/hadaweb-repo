@@ -28,15 +28,19 @@
                                 <hr size="4px" width="100%" align="center" color="gray"/>
 									<input type="hidden" name="accountType" value="private" />
 									<li>
-                                        <strong>Actualmente tu contraseña es: cuentaPrueba123</strong><p></p>
-										<p><strong>¿Deseas cambiarla?   
-											<label>
-												<input type="radio" id="tqa_register_personTitleMr" name="personTitle" value="Mr"  /> Sí
-											</label>
-											<label>
-												<input type="radio" id="tqa_register_personTitleMrs" name="personTitle" value="Mrs"  /> No
-											</label>
-                                            </strong></p></font>
+                                       <strong>Actualmente tu contraseña tienes una contraseña asignada.</strong><p></p>
+                                       <li class="password">
+										<label><strong>Introduce tu contraseña actual</strong><em>*</em></label>
+										<input type="password" name="logonPassword" id="register-password" maxLength="15" />
+									   </li>
+                                       <li class="password-repeat">
+										<label><strong>Introduce tu nueva contraseña</strong><em>*</em></label>
+										<input type="password" name="logonPasswordVerify"  id="register-password-confirm" maxLength="15" />
+									   </li>
+                                       <li class="password-repeat">
+										<label><strong>Repite tu nueva contraseña</strong><em>*</em></label>
+										<input type="password" name="logonPasswordVerify"  id="Password1" maxLength="15" />
+									   </li>
 								</ul>
 								<a href="misdatos.aspx" class="button">Aceptar</a>   <a href="misdatos.aspx" class="button">Cancelar</a>
 

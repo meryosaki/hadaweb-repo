@@ -8,7 +8,7 @@
                                 <hr size="4px" width="100%" align="center" color="white"/>
 							</ul>
 							<div class="row no-collapse-1">
-                            <p></p><p></p><p></p><p></p>
+                            <p></p><p></p>
 <style>
 .box-white {
 margin:20 20 20px;
@@ -18,7 +18,7 @@ background: white;
 -webkit-border-radius: 100px;
 border-radius: 5px;
 }</style>
-                            <p></p><p></p>
+                            <p></p>
                             <div align="center">
                             <img src="images/avatar.png" alt="" />
                             <p></p>
@@ -54,10 +54,10 @@ border-radius: 5px;
                                         </asp:CustomValidator>
 									</li><li>
 										<label><strong>Nombre completo</strong></label>
-                                        <asp:TextBox ID="Text2" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Nombre" runat="server"></asp:TextBox>
 									</li><li>
 										<label><strong>Dirección de E-mail</strong></label>
-                                        <asp:TextBox ID="Text3" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="Email" runat="server"></asp:TextBox>
 									</li>
 								</ul>
             

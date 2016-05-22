@@ -13,56 +13,86 @@ namespace WebApplication1
         {
             if (Session["USER"] == null)
             {
-                Identificate.Visible = true;
-                Salir.Visible = false;
                 Carrito.Visible = false;
+                Cuenta.Visible = false;
+                Cerrar.Visible = false;
+                CerrarIcon.Visible = false;
+                CarritoIcon.Visible = false;
+
             }
             else
             {
-                Identificate.Visible = false;
-                Salir.Visible = true;
-                Carrito.Visible = true;
+                Identificarse.Visible = false;
+
             }
+
         }
-        public void InicioRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/inicio.aspx");
-        }
-        public void CursosRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/cursos.aspx");
-        }
-        public void OfertasRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/ofertas.aspx");
-        }
-        public void ComprarRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/comprar.aspx");
-        }
-        public void QuienesRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/quienes.aspx");
-        }
-        public void AvisoRedirect(object sender, EventArgs e)
-        {
-            Response.Redirect("~/avisolegal.aspx");
-        }
-        public void IdentificateRedirect(object sender, EventArgs e)
+
+
+        public void RedirectImagenCer(object sender, EventArgs e)
         {
             Response.Redirect("~/identificarse.aspx");
         }
-        public void SalirRedirect(object sender, EventArgs e)
+
+        public void RedirectCuenta(object sender, EventArgs e)
         {
-            if (Session["USER"] != null)
+            Response.Redirect("~/micuenta.aspx");
+        }
+
+        public void RedirectImagenIde(object sender, EventArgs e)
+        {
+            if (Session["USER"] == null)
             {
-                Session["USER"] = null;
+                Response.Redirect("~/identificarse.aspx");
             }
+            else
+            {
+                Response.Redirect("~/micuenta.aspx");
+            }
+        }
+
+        public void RedirectImagenCar(object sender, EventArgs e)
+        {
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        public void RedirectCarrito(object sender, EventArgs e)
+        {
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        public void RedirectIdentificarse(object sender, EventArgs e)
+        {
+            Response.Redirect("~/identificarse.aspx");
+        }
+        public void RedirectInicio(object sender, EventArgs e)
+        {
             Response.Redirect("~/inicio.aspx");
         }
-        public void CarritoRedirect(object sender, EventArgs e) {
-            Response.Redirect("~/micarrito.aspx");
-        
+
+        public void RedirectQsomos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/quienes.aspx");
+        }
+        public void RedirectAviso(object sender, EventArgs e)
+        {
+            Response.Redirect("~/avisolegal.aspx");
+        }
+        public void RedirectCursos(object sender, EventArgs e)
+        {
+            Response.Redirect("~/cursos.aspx");
+        }
+        public void RedirectOfertas(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ofertas.aspx");
+        }
+        public void RedirectComo(object sender, EventArgs e)
+        {
+            Response.Redirect("~/comocomprar.aspx");
         }
     }
 }
+      
+
+
+
