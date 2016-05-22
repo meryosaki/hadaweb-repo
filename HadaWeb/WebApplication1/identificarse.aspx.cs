@@ -44,7 +44,7 @@ namespace WebApplication1
                 }
                 else
                 {
-                    Session["PROFFESOR"] = nuevo;
+                    Session["PROFESSOR"] = nuevo;
                     Response.Redirect("~/profesorcuenta.aspx");
                 }
                 //Session["USER"] = nuevo.Nick;

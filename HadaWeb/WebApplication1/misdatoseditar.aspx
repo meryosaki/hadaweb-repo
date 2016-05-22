@@ -22,9 +22,14 @@ border-radius: 5px;
                             <div align="center">
                             <img src="images/avatar.png" alt="" />
                             <p></p>
+                              
                             <form enctype="multipart/form-data" action="" method="POST">
-<input class="button nopopup" type="file" name="uploadedfile" value="Seleccione imagen"/>
+                            <asp:FileUpload ID="SubirArchivo" runat="server" />
+                                <br />
+                                <asp:Button ID="BotonSubir" runat="server" Text="Subir Archivo!" OnClick="ConfirmarArchivo" />
+                              
 </form>
+                                  <asp:Label ID="ArchivoSubido" runat="server" visible="False"></asp:Label>
                             <p></p>
                             </div>
                             <p></p>

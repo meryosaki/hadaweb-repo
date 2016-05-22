@@ -22,6 +22,59 @@ namespace WebApplication1
             Email.Text= us.Email;
         }
 
+        protected void ConfirmarArchivo(object sender, EventArgs e)
+        {
+            string path = Server.MapPath("~/images/userimages/");
+            bool fileOk = false;
+            if (SubirArchivo.HasFile)
+            {
+                string FileName = System.IO.Path.GetExtension(SubirArchivo.FileName).ToLower();
+                string[] extensionesPermitidas = { ".gif", ".png", ".jpeg", ".jpg" };
+
+                for (int i = 0; i < extensionesPermitidas.Length; i++)
+                {
+                    if (FileName == extensionesPermitidas[i])
+                    {
+                        fileOk = true;
+                    }
+                }
+                if (!fileOk)
+                {
+                    ArchivoSubido.Text = "Extensión de archivo no permitida";
+                    ArchivoSubido.Visible = true;
+                }
+                if (fileOk)
+                {
+                    try{
+
+                        if (Session["USER"] == null)
+                        {
+                            SubirArchivo.PostedFile.SaveAs(path + Session["PROFESSOR"].ToString());
+                          
+                        }
+                        else
+                        {
+                            SubirArchivo.PostedFile.SaveAs(path + Session["USER"].ToString());  
+                        }
+                        ArchivoSubido.Text = "Archivo Subido Correctamente!";
+                        ArchivoSubido.Visible = true;
+                    }
+                    catch (Exception errorArchivo)
+                    {
+                        ArchivoSubido.Visible = true;
+                        ArchivoSubido.Text = "Error al subir el archivo";
+
+
+                    }
+
+                }
+            }
+        }
+
+
+        
+
+
         protected void Confirmar(object sender, EventArgs e)
         {
             UsuarioEN cliente = new UsuarioEN();

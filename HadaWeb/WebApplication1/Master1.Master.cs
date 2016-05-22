@@ -14,7 +14,7 @@ namespace WebApplication1
             //primero controlo cuando los dos son nulos, es decir, no me he logeado
             if (Session["USER"] == null)
             {
-                if (Session["PROFFESOR"] == null)
+                if (Session["PROFESSOR"] == null)
                 {
                     Cuenta.Visible = false;
                     Identificarse.Visible = true;
@@ -25,7 +25,7 @@ namespace WebApplication1
                     CarritoIcon.Visible = false;
                 }
                 //ahora controlo cuando me logeo como profesor
-                if (Session["PROFFESOR"] != null)
+                if (Session["PROFESSOR"] != null)
                 {
                     Cuenta.Visible = true;
                     Identificarse.Visible = false;
@@ -37,8 +37,8 @@ namespace WebApplication1
                 }
             }
             else{
-                //ahora controlo cuando me logio como cliente
-                if (Session["PROFFESOR"] == null)
+                //ahora controlo cuando me logeo como cliente
+                if (Session["PROFESSOR"] == null)
                 {
                     Cuenta.Visible = true;
                     Identificarse.Visible = false;
@@ -59,9 +59,9 @@ namespace WebApplication1
             {
                 Session["USER"] = null;
             }
-            if (Session["PROFFESOR"] != null)
+            if (Session["PROFESSOR"] != null)
             {
-                Session["PROFFESOR"] = null;
+                Session["PROFESSOR"] = null;
             }
             Response.Redirect("~/identificarse.aspx");
         }
@@ -74,7 +74,7 @@ namespace WebApplication1
             }
             else
             {
-                if (Session["PROFFESOR"] != null)
+                if (Session["PROFESSOR"] != null)
                 {
                     Response.Redirect("~/profesorcuenta.aspx");
                 }

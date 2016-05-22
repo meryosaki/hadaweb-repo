@@ -41,15 +41,15 @@ border-radius: 5px;
 									</li>
                                     <li>
 										<span><strong>Nick</strong></span>
-                                       <p> <asp:Label ID="Label1" runat="server" ></asp:Label></p>
+                                       <p> <asp:Label ID="Nick" runat="server" ></asp:Label></p>
 									
 									</li><li>
 										<span><strong>Nombre completo</strong></span>
-                                        <p><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
+                                        <p><asp:Label ID="Nombre" runat="server" ></asp:Label></p>
 									</li>
                                     <li>
 										<span><strong>Dirección de E-mail</strong></span>
-                                       <p> <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></p>
+                                       <p> <asp:Label ID="Email" runat="server"></asp:Label></p>
 									</li>
                                 <a href="misdatoseditar.aspx" class="button">Editar mis datos</a>
                                 <a href="mipasseditar.aspx" class="button">Cambiar contraseña</a>

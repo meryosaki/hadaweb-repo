@@ -64,39 +64,51 @@ namespace PracticaGrupalHADA
             conex.Close();
         }
         //Módulo que modifica algun dato de un usuario.
-        public void modificar_usuario(UsuarioEN u)
+         public void modificar_usuario(UsuarioEN u)
         {
+
             conex.Open();
-            SqlCommand com = new SqlCommand("update usuario set email = '" + u.Email + "', nick ='" + u.Nick + "', nombre = '" + u.Nombre + "', contrasenya = '" + u.Contrasenya + "', telefono = '" + u.Telefono + "', avatar = '" + u.Avatar + "' where idUsuario = " + u.IdUsuario, conex);
+            SqlCommand com = new SqlCommand("update usuario set email = '" + u.Email + "', nick ='" + u.Nick + "', nombre = '"  + u.Nombre + "' where idUsuario = " + u.IdUsuario, conex);
             com.ExecuteNonQuery();
             conex.Close();
         }
+        
         //Modulo que muestra algun dato de un usuario.
-        public UsuarioEN mostrar_usuario(int id)
+        public UsuarioEN mostrar_usuario(UsuarioEN usuario)
         {
-            UsuarioEN us = new UsuarioEN();
             SqlDataReader dr;
             try
             {
                 conex.Open();
-                string operation = "Select * from usuario where idUsuario = " + id;
+                string operation = "Select * from usuario where nick = '" + usuario.Nick + "'";
                 SqlCommand com = new SqlCommand(operation, conex);
                 dr = com.ExecuteReader();
                 dr.Read();
+                usuario.IdUsuario = Int32.Parse(dr["idUsuario"].ToString());
+                usuario.Email = dr["email"].ToString();
+                usuario.Nick = dr["nick"].ToString();
+                usuario.Nombre = dr["nombre"].ToString();
+                usuario.Contrasenya = dr["contrasenya"].ToString();
+                usuario.F_nacimiento = Convert.ToDateTime(dr["f_nacimiento"].ToString());
+                usuario.Telefono = dr["telefono"].ToString();
+                usuario.Avatar = dr["avatar"].ToString();
+
                 dr.Close();
             }
-            //return dr;
-            catch (Exception e)
+            catch (Exception ex)
             {
 
+                //Aqui trataremos la excepcion.         
             }
             finally
             {
                 conex.Close();
 
             }
-            return us;
+            return usuario;
         }
+
+        
 
         public int Last_ID()
         {
@@ -193,39 +205,6 @@ namespace PracticaGrupalHADA
 
         }
         //Modulo que muestra algun dato de un usuario.
-        public UsuarioEN mostrar_usuario(UsuarioEN usuario)
-        {
-            SqlDataReader dr;
-            try
-            {
-                conex.Open();
-                string operation = "Select * from usuario where nick = '" + usuario.Nick + "'";
-                SqlCommand com = new SqlCommand(operation, conex);
-                dr = com.ExecuteReader();
-                dr.Read();
-                usuario.IdUsuario = Int32.Parse(dr["idUsuario"].ToString());
-                usuario.Email = dr["email"].ToString();
-                usuario.Nick = dr["nick"].ToString();
-                usuario.Nombre = dr["nombre"].ToString();
-                usuario.Contrasenya = dr["contrasenya"].ToString();
-                usuario.F_nacimiento = Convert.ToDateTime(dr["f_nacimiento"].ToString());
-                usuario.Telefono = dr["telefono"].ToString();
-                usuario.Avatar = dr["avatar"].ToString();
-
-                dr.Close();
-            }
-            catch (Exception ex)
-            {
-
-                //Aqui trataremos la excepcion.         
-            }
-            finally
-            {
-                conex.Close();
-
-            }
-            return usuario;
-        }
         public bool comprobarUsuarioClienteCAD(int Id)
         {
             bool existe = false;
