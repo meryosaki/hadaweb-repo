@@ -24,8 +24,8 @@ namespace WebApplication1
 
         protected void ConfirmarArchivo(object sender, EventArgs e)
         {
-            string path = Server.MapPath("~/images/userimages");
-            bool fileOk = true;
+            string path = Server.MapPath("~/images/userimages/");
+            bool fileOk = false;
             if (SubirArchivo.HasFile)
             {
                 string FileName = System.IO.Path.GetExtension(SubirArchivo.FileName).ToLower();
@@ -33,7 +33,7 @@ namespace WebApplication1
 
                 for (int i = 0; i < extensionesPermitidas.Length; i++)
                 {
-                    if (SubirArchivo.FileName == extensionesPermitidas[i])
+                    if (FileName == extensionesPermitidas[i])
                     {
                         fileOk = true;
                     }
@@ -45,9 +45,17 @@ namespace WebApplication1
                 }
                 if (fileOk)
                 {
-                    try
-                    {
-                        SubirArchivo.PostedFile.SaveAs(path + SubirArchivo.FileName);
+                    try{
+
+                        if (Session["USER"] == null)
+                        {
+                            SubirArchivo.PostedFile.SaveAs(path + Session["PROFESSOR"].ToString());
+                          
+                        }
+                        else
+                        {
+                            SubirArchivo.PostedFile.SaveAs(path + Session["USER"].ToString());  
+                        }
                         ArchivoSubido.Text = "Archivo Subido Correctamente!";
                         ArchivoSubido.Visible = true;
                     }
