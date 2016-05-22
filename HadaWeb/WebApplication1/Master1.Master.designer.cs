@@ -28,7 +28,7 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Inicio;
+        protected global::System.Web.UI.WebControls.Button Inicio;
         
         /// <summary>
         /// Control Cursos.
@@ -37,7 +37,7 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Cursos;
+        protected global::System.Web.UI.WebControls.Button Cursos;
         
         /// <summary>
         /// Control Ofertas.
@@ -46,7 +46,7 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Ofertas;
+        protected global::System.Web.UI.WebControls.Button Ofertas;
         
         /// <summary>
         /// Control ComoComprar.
@@ -55,16 +55,16 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton ComoComprar;
+        protected global::System.Web.UI.WebControls.Button ComoComprar;
         
         /// <summary>
-        /// Control Qsomos.
+        /// Control Quienes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Qsomos;
+        protected global::System.Web.UI.WebControls.Button Quienes;
         
         /// <summary>
         /// Control AvisoLegal.
@@ -73,16 +73,25 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AvisoLegal;
+        protected global::System.Web.UI.WebControls.Button AvisoLegal;
         
         /// <summary>
-        /// Control Identificarse.
+        /// Control Identificate.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Identificarse;
+        protected global::System.Web.UI.WebControls.Button Identificate;
+        
+        /// <summary>
+        /// Control Salir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Salir;
         
         /// <summary>
         /// Control Carrito.
@@ -91,25 +100,7 @@ namespace WebApplication1 {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Carrito;
-        
-        /// <summary>
-        /// Control Cuenta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Cuenta;
-        
-        /// <summary>
-        /// Control Cerrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton Cerrar;
+        protected global::System.Web.UI.WebControls.Button Carrito;
         
         /// <summary>
         /// Control ContentPlaceHolder1.
@@ -119,5 +110,41 @@ namespace WebApplication1 {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        
+        /// <summary>
+        /// Control NickSend.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NickSend;
+        
+        /// <summary>
+        /// Control EmailSend.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EmailSend;
+        
+        /// <summary>
+        /// Control Mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Mensaje;
+        
+        /// <summary>
+        /// Control ButtonEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonEmail;
     }
 }
