@@ -14,14 +14,13 @@
 
 
                              <columns>
-                                <itemtemplate>
                                     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
                                         <AlternatingItemTemplate>
                                             <td runat="server" style="" aling="center">
                                                 
-                                                <asp:Image ID="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
+                                                <asp:Image id="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
                                                 <br />
-                                                <asp:Button ID="boton" runat="server" Text='<%# Bind("nombre") %>' />
+                                                <asp:Button id="boton" runat="server" Text='<%# Bind("nombre") %>' OnClick="boton_Click"/>
                                                     
                                                 <br />
                                             </td>
@@ -72,7 +71,7 @@
                                                  
                                                  <asp:Image ID="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
                                                 <br />
-                                                 <asp:Button ID="boton" runat="server" Text='<%# Bind("nombre") %>' />
+                                                 <asp:Button ID="boton" runat="server" Text='<%# Bind("nombre") %>' OnClick="boton_Click"/>
                                                  <br />
                                             </td>
                                         </ItemTemplate>
@@ -102,7 +101,6 @@
                                         </SelectedItemTemplate>
                             </asp:ListView>
                                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre] FROM [curso]"></asp:SqlDataSource>
-                                </itemtemplate>
                             </columns>
 
 

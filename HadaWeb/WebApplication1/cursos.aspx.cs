@@ -13,5 +13,18 @@ namespace WebApplication1
         {
 
         }
+
+        protected void boton_Click(object sender, EventArgs e)
+        {
+            switch (sender.ToString())
+            {
+                case "boton": Response.Redirect("inicio.aspx");
+                    break;
+            }
+            
+        }
+
+
     }
+
 }
