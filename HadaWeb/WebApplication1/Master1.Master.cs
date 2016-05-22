@@ -36,7 +36,7 @@ namespace WebApplication1
 
         public void RedirectCuenta(object sender, EventArgs e)
         {
-            Response.Redirect("~/identificarse.aspx");
+            Response.Redirect("~/micuenta.aspx");
         }
 
         public void RedirectImagenIde(object sender, EventArgs e)
@@ -52,6 +52,11 @@ namespace WebApplication1
         }
 
         public void RedirectImagenCar(object sender, EventArgs e)
+        {
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        public void RedirectCarrito(object sender, EventArgs e)
         {
             Response.Redirect("~/micarrito.aspx");
         }
@@ -83,7 +88,7 @@ namespace WebApplication1
         }
         public void RedirectComo(object sender, EventArgs e)
         {
-            Response.Redirect("~/comprar.aspx");
+            Response.Redirect("~/comocomprar.aspx");
         }
     }
 }
