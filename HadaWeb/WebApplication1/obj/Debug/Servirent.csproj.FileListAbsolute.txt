@@ -1,68 +1,3 @@
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Admin\Desktop\MEJORDAO\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Kvoths\Desktop\final\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\EPS\Desktop\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Kvoths\Desktop\UA\Segundo curso\Segundo trimestre\Herramientos avanzadas para el desarrollo de las aplicaciones\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\María\Documents\GitHub\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Admin\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Oskis\Documents\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.dll
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.pdb
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
-C:\Users\Alvaro Navarro\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-<<<<<<< HEAD
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll.config
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.dll
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\WebApplication1.pdb
@@ -71,5 +6,3 @@ C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\bin\HadaWeb.
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\Servirent.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Admin\Dropbox\Desktop\hadaweb-repo\HadaWeb\WebApplication1\obj\Debug\WebApplication1.pdb
-=======
->>>>>>> refs/remotes/origin/master
