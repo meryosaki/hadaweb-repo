@@ -24,15 +24,11 @@
 =======
 				</ul>
 <<<<<<< HEAD
-<<<<<<< HEAD
 										  
 									 
 >>>>>>> parent of d080c2b... Revert "f"
 =======
 										
-=======
-										  
->>>>>>> parent of 2ae7f00... Revert "."
 									
 >>>>>>> parent of b9a9d23... .
 									</div>
