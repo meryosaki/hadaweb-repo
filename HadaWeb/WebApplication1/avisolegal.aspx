@@ -23,9 +23,14 @@
 									
 =======
 				</ul>
+<<<<<<< HEAD
 										  
 									 
 >>>>>>> parent of d080c2b... Revert "f"
+=======
+										
+									
+>>>>>>> parent of b9a9d23... .
 									</div>
 								</section>
 								
