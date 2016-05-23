@@ -111,6 +111,26 @@ namespace PracticaGrupalHADA
             }
         }
 
+        public string numEN(string a)
+        {
+            oferta_cad = new OfertaCAD("bbddSQLhada");
+            return oferta_cad.nombresOfertasCAD(a);
+        }
+
+        public List<OfertaEN> mostrar_todas_ofertasEN()
+        {
+            try
+            {
+                oferta_cad = new OfertaCAD("bbddSQLhada");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error mostrando Cursos: %s\n", e);
+            }
+            return oferta_cad.mostrar_todas_ofertas();
+        }
+
 
 
 

@@ -101,5 +101,89 @@ namespace PracticaGrupalHADA
             return oferta;
 
         }
+
+        public string nombresOfertasCAD(string a)
+        {
+
+            int num;
+            string aux = "";
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(nombre) from oferta";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+
+
+            for (int i = 3; i < (num + 3); i++)
+            {
+                using (SqlConnection conexion = new SqlConnection(BDD))
+                {
+                    string sql2 = "";
+
+                    if (a != "null")
+                    {
+                        sql2 = "select nombre from oferta where categoria = '" + a + "' and idOferta = " + i;
+                    }
+                    else
+                    {
+                        sql2 = "select nombre from oferta where idOferta = " + i;
+                    }
+
+                    conexion.Open();
+
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = conexion;
+                    com.CommandText = sql2;
+                    com.CommandType = CommandType.Text;
+
+                    aux += (com.ExecuteScalar() + " ");
+                    com.Dispose();
+                    conexion.Close();
+                }
+            }
+            return aux;
+        }
+
+        // Metodo que devuelve todos los cursos que han sido registrados en la bbdd (cursos solicitados)
+        public List<OfertaEN> mostrar_todas_ofertas()
+        {
+
+            int num;
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(id) from oferta";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+
+            List<OfertaEN> oferta = new List<OfertaEN>();
+
+            for (int i = 3; i < (num + 3); i++)
+            {
+                oferta.Add(mostrar_oferta(i));
+            }
+            return oferta;
+        }
     }
 }
