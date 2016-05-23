@@ -17,9 +17,15 @@
 					<li><a href="https://twitter.com/Serv1rent"   target="_blank" class="fa fa-twitter"><span>Twitter</span></a></li>
 					<li><a href="https://www.instagram.com/servirent/"  target="_blank"  class="fa fa-instagram"><span>Instagram</span></a></li>
 					<li><a href="https://plus.google.com/u/0/104476755668848707232?hl=es"  target="_blank" class="fa fa-google-plus"><span>Google+</span></a></li>
+<<<<<<< HEAD
 				</ul> 
 									 	  
 									
+=======
+				</ul>
+										  
+									 
+>>>>>>> parent of d080c2b... Revert "f"
 									</div>
 								</section>
 								
