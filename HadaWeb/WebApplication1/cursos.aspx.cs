@@ -13,7 +13,16 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string b = Request.QueryString["b"];
+            prueba.Text = b;
+            prueba.Visible = false;
 
+            if (prueba.Text == "")
+            {
+                CursoEN curso = new CursoEN();
+                prueba.Text = curso.numEN("null");
+                ListView1.Visible = true;
+            }
         }
         
         protected void boton_Click(object sender, EventArgs e)
@@ -53,8 +62,15 @@ namespace WebApplication1
             
         }
 
-        protected void selection_Category(object sender, EventArgs e)
+        protected void mostrar_Click(object sender, EventArgs e)
         {
+            string aux = DropDownList1.Text;
+
+            CursoEN curso = new CursoEN();
+
+            string b = curso.numEN(aux);
+
+            prueba.Text = b;
 
         }
 

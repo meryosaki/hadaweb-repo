@@ -116,10 +116,87 @@ namespace PracticaGrupalHADA
 
         }
 
+        public string nombresCursosCAD(string a)
+        {
+
+            int num;
+            string aux = "";
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(nombre) from curso";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+
+
+            for (int i = 4; i < (num + 4); i++)
+            {
+                using (SqlConnection conexion = new SqlConnection(BDD))
+                {
+                    string sql2 = "";
+
+                    if (a != "null")
+                    {
+                        sql2 = "select nombre from curso where categoria = '" + a + "' and idCurso = " + i;
+                    }
+                    else
+                    {
+                        sql2 = "select nombre from curso where idCurso = " + i;
+                    }
+
+                    conexion.Open();
+
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = conexion;
+                    com.CommandText = sql2;
+                    com.CommandType = CommandType.Text;
+
+                    aux += (com.ExecuteScalar() + " ");
+                    com.Dispose();
+                    conexion.Close();
+                }
+            }
+            return aux;
+        }
+
         // Metodo que devuelve todos los cursos que han sido registrados en la bbdd (cursos solicitados)
         public List<CursoEN> mostrar_todos_cursos(){
+
+            int num;
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(id) from curso";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+            
             List<CursoEN> cursos = new List<CursoEN>();
-            return cursos;
+
+            for (int i = 4; i < (num + 4); i++)
+            {
+                cursos.Add(mostrar_curso(i));
+            }
+                return cursos;
         }
     }
 }

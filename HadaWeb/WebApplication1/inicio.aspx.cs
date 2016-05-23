@@ -11,7 +11,24 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        }  
+        }
+
+        protected void Buton_Click(object sender, EventArgs e)
+        {
+            string b = buscador.Text;
+            string op = DropDownList1.Text;
+
+            if (op == "Cursos")
+            {
+                Response.Redirect("cursos.aspx?b=" + b);
+            }
+            else
+            {
+                Response.Redirect("ofertas.aspx?b=" + b);
+            }
+
+
+        }
     }
     
 }

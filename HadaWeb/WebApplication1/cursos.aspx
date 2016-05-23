@@ -13,6 +13,7 @@
                         </asp:DropDownList>
 
 
+                        <asp:Button ID="Button1" runat="server" Text="Mostrar" Onclick="mostrar_Click"/>
                              <columns>
                                     <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
                                         <AlternatingItemTemplate>
@@ -100,7 +101,11 @@
                                             </td>
                                         </SelectedItemTemplate>
                             </asp:ListView>
-                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre] FROM [curso]"></asp:SqlDataSource>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT avatar, nombre FROM curso WHERE (@nombre LIKE '%' + nombre + '%')">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="prueba" Name="nombre" PropertyName="Text" Type="String" />
+                                    </SelectParameters>
+                            </asp:SqlDataSource>
                             </columns>
 
                             <asp:Label ID ="prueba" Text="" runat="server"></asp:Label>

@@ -79,14 +79,7 @@
 						</nav>
                        
 					</div>
-           <ul class="style">
-               <p align=center>
-                    <asp:TextBox id="buscador" Text="" Width="1000px" runat="server" placeholder="Buscar"></asp:TextBox>
-               </p>
-               <p align=left>
-                    <asp:Button runat="server" ID="Buton" Text="Buscar"/>
-               </p>
-        </ul>
+       
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             
         </asp:ContentPlaceHolder>
