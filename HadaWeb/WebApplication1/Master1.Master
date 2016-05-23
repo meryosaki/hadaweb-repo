@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebApplication1.Master1" %>  
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebApplication1.Master1" %>
 
 <!DOCTYPE html>
 
@@ -95,24 +95,24 @@
 					<form method="post" action="#">
 						<div class="row half">
 							<div class="12u">
-                                <asp:TextBox ID="NickSend" Text="Nick" runat="server"> </asp:TextBox>
+								<input class="text" type="text" name="name" id="name" placeholder="Nombre" />
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
-                                <asp:TextBox ID="EmailSend" Text="Email" runat="server"> </asp:TextBox>							
+								<input class="text" type="text" name="email" id="email" placeholder="Email" />
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
-                                <asp:TextBox name="Mensaje" ID="Mensaje" Text="Mensaje" runat="server" ></asp:TextBox>								
+								<textarea name="message" id="message" placeholder="Mensaje"></textarea>
 							</div>
 						</div>
 						<div class="row half">
 							<div class="12u">
 								<ul class="actions">
 									<li>
-                                        <asp:Button id="ButtonEmail" runat="server" OnClick="SendMail" Text="Enviar"></asp:Button> 
+										<input type="submit" value="Enviar mensaje" class="button alt" />
 									</li>
 								</ul>
 							</div>

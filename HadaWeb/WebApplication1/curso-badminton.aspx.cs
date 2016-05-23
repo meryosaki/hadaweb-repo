@@ -17,7 +17,7 @@ namespace WebApplication1
         {
             if (Session["USER"] == null)
                 Response.Redirect("~/identificarse.aspx");
-            else if(Session["USER"] != null)
+            else
                 Response.Redirect("~/micarrito.aspx");
         }
     }

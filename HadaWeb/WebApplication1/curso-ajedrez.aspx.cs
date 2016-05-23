@@ -15,10 +15,10 @@ namespace WebApplication1
         }
         protected void ButtonReservar(object sender, EventArgs e)
         {
-            if (Session["USER"] == null)
-                Response.Redirect("~/identificarse.aspx");
-            else if (Session["USER"] != null)
-                Response.Redirect("~/micarrito.aspx");
+                if (Session["USER"] == null)
+                    Response.Redirect("~/identificarse.aspx");
+                else
+                    Response.Redirect("~/micarrito.aspx");
         }
     }
 }
