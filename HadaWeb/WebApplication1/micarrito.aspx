@@ -46,20 +46,30 @@
                                     background-color: #76DAFB;
                                   }
                                 </style>
-                                    
-<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
+                                    <!--Gridview de pedidos-->
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" onrowcommand="EliminarArticulo">
                                         <Columns>
                                             <asp:ImageField DataImageUrlField="avatar" DataImageUrlFormatString="~/images/{0}" HeaderText=" Imagen " ControlStyle-Width="100px" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<ControlStyle Width="100px"></ControlStyle>
+
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
                                             </asp:ImageField>
-                                            <asp:BoundField DataField="nombre" HeaderText=" Nombre del artículo " SortExpression="nombre" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle"/>
-                                            <asp:BoundField DataField="precio" HeaderText=" Precio " SortExpression="precio" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle"/>
+                                            <asp:BoundField DataField="nombre" HeaderText=" Nombre del artículo " SortExpression="nombre" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="importe_total" HeaderText=" Precio " SortExpression="precio" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+                                            </asp:BoundField>
+                                            <asp:ButtonField  Text="Eliminar artículo" ControlStyle-Font-Bold="true" CommandName="eliminar" />
                                         </Columns>
                                     </asp:GridView>   
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre], [precio] FROM [pedido], [curso] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([curso] = [idCurso])">
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre], [importe_total] FROM [pedido], [curso] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([curso] = [idCurso]) AND ([estadoPedido] like 'Activo')
+                                                                                                                                                                        UNION
+                                                                                                                                                                       SELECT [avatar], [nombre], [importe_total] FROM [pedido], [oferta] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([oferta] = [idOferta]) AND ([estadoPedido] like 'Activo') ">
                                         <SelectParameters>
                                             <asp:SessionParameter Name="cliente" SessionField="USER" Type="String" />
                                         </SelectParameters>
-                                    </asp:SqlDataSource>                                
+                                    </asp:SqlDataSource>
                                 <td align="right"><strong> Importe total </strong></td>
                                 </tr>
                                 <tr>
@@ -73,7 +83,7 @@
  
 								</ul>
                                 <asp:Button ID="ConfirmarPedido" runat="server" Text="Confirmar pedido" Onclick="confirmarP"/>
-								<a href="misdatos.aspx" class="button">Confirmar pedido</a> 
+								<asp:Button ID="BorrarPedido" runat="server" Text="Borrar pedido" Onclick="borrarP"/>
 
 							</fieldset></div>
 

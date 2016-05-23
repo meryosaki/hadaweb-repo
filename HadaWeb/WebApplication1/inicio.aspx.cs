@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using PracticaGrupalHADA;
 namespace WebApplication1
 {
     public partial class inicio : System.Web.UI.Page

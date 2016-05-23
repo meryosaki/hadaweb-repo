@@ -42,8 +42,9 @@ namespace PracticaGrupalHADA
             nuevafila[0] = oferta.IdOferta;
             nuevafila[1] = oferta.Nombre;
             nuevafila[2] = oferta.Avatar;
-            nuevafila[3] = oferta.Curso1;
-            nuevafila[4] = oferta.Curso2;
+            nuevafila[3] = oferta.Categoria;
+            nuevafila[4] = oferta.Curso1;
+            nuevafila[5] = oferta.Curso2;
             t.Rows.Add(nuevafila);
             SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
             da.Update(bdvirtual, "oferta");
@@ -62,7 +63,7 @@ namespace PracticaGrupalHADA
         public void modificar_oferta(OfertaEN oferta){
             // Aqui realizamos el update en la bbdd
             conex.Open();
-            SqlCommand com = new SqlCommand("update oferta set  idOferta = " + ", nombre = '" + oferta.Nombre + "', avatar = '" + oferta.Avatar + "', curso1 = " + oferta.Curso1 + ", curso2 =" + oferta.Curso2 + "where idOferta = " + oferta.IdOferta, conex);
+            SqlCommand com = new SqlCommand("update oferta set  idOferta = " + ", nombre = '" + oferta.Nombre + "', avatar = '" + oferta.Avatar + "', categoria = '"+ oferta.Categoria + "', curso1 = " + oferta.Curso1 + ", curso2 =" + oferta.Curso2 + "where idOferta = " + oferta.IdOferta, conex);
             com.ExecuteNonQuery();
             conex.Close();
         }
@@ -82,6 +83,7 @@ namespace PracticaGrupalHADA
                 oferta.IdOferta = Int32.Parse(dr["idOferta"].ToString());
                 oferta.Nombre = dr["nombre"].ToString();
                 oferta.Avatar = dr["avatar"].ToString();
+                oferta.Categoria = dr["categoria"].ToString();
                 oferta.Curso1 = Int32.Parse(dr["curso1"].ToString());
                 oferta.Curso2 = Int32.Parse(dr["curso2"].ToString());
                 dr.Close();

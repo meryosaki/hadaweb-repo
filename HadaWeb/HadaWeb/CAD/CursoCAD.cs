@@ -47,12 +47,12 @@ namespace PracticaGrupalHADA
             nuevafila[3] = curso.Valoracion;
             nuevafila[4] = curso.Precio;
             nuevafila[5] = curso.Duracion;
-            //nuevafila[5] = curso.Categoria;
-            nuevafila[6] = curso.Avatar;
-            nuevafila[7] = curso.PlazasOcupadas;
-            nuevafila[8] = curso.PlazasDisponibles;
-            nuevafila[9] = curso.F_inicio;
-            nuevafila[10] = curso.Profesor;
+            nuevafila[6] = curso.Categoria;
+            nuevafila[7] = curso.Avatar;
+            nuevafila[8] = curso.PlazasOcupadas;
+            nuevafila[9] = curso.PlazasDisponibles;
+            nuevafila[10] = curso.F_inicio;
+            nuevafila[11] = curso.Profesor;
             t.Rows.Add(nuevafila);
             SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
             da.Update(bdvirtual, "curso");

@@ -21,6 +21,7 @@ namespace WebApplication1
                 precioTotal += Convert.ToDouble(precioActual);
             }
             Importe.Text = precioTotal.ToString();
+            
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +31,33 @@ namespace WebApplication1
         protected void confirmarP(object sender, EventArgs e)
         {
             string nombre = Session["USER"].ToString();
+            PedidoEN pedido = new PedidoEN();
+            pedido.Cliente = nombre;
+            pedido.Confirmar();
             Response.Redirect("~/misdatos.aspx");
         }
+
+        protected void borrarP(Object sender, EventArgs e)
+        {
+            string nombre = Session["USER"].ToString();
+            PedidoEN pedido = new PedidoEN();
+            pedido.Cliente = nombre;
+            pedido.borrar_todos_los_pedidos();
+            Response.Redirect("~/micarrito.aspx");
+        }
+
+        protected void EliminarArticulo(Object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "eliminar")
+            {
+                int index = Convert.ToInt32(e.CommandArgument);
+                string usuario = Session["USER"].ToString();
+                string curso = GridView1.Rows[index].Cells[1].Text;
+                PedidoEN p = new PedidoEN();
+                p.Cliente = usuario;
+                p.borrar_pedido_carrito(curso);
+                Response.Redirect("~/micarrito.aspx");
+            }
+        }      
     }
 }
