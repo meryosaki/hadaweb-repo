@@ -47,12 +47,12 @@ namespace PracticaGrupalHADA
             nuevafila[3] = curso.Valoracion;
             nuevafila[4] = curso.Precio;
             nuevafila[5] = curso.Duracion;
-            //nuevafila[5] = curso.Categoria;
-            nuevafila[6] = curso.Avatar;
-            nuevafila[7] = curso.PlazasOcupadas;
-            nuevafila[8] = curso.PlazasDisponibles;
-            nuevafila[9] = curso.F_inicio;
-            nuevafila[10] = curso.Profesor;
+            nuevafila[6] = curso.Categoria;
+            nuevafila[7] = curso.Avatar;
+            nuevafila[8] = curso.PlazasOcupadas;
+            nuevafila[9] = curso.PlazasDisponibles;
+            nuevafila[10] = curso.F_inicio;
+            nuevafila[11] = curso.Profesor;
             t.Rows.Add(nuevafila);
             SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
             da.Update(bdvirtual, "curso");
@@ -116,10 +116,150 @@ namespace PracticaGrupalHADA
 
         }
 
+        public string nombresCursosCAD(string a)
+        {
+
+            int num;
+            string aux = "";
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(nombre) from curso";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+
+            int id_max = Last_ID();
+            int id_min = Min_ID();
+            for (int i = id_min; i < id_max; i++)
+            {
+                using (SqlConnection conexion = new SqlConnection(BDD))
+                {
+                    string sql2 = "";
+
+                    if (a != "null")
+                    {
+                        sql2 = "select nombre from curso where categoria = '" + a + "' and idCurso = " + i;
+                    }
+                    else
+                    {
+                        sql2 = "select nombre from curso where idCurso = " + i;
+                    }
+
+                    conexion.Open();
+
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = conexion;
+                    com.CommandText = sql2;
+                    com.CommandType = CommandType.Text;
+
+                    aux += (com.ExecuteScalar() + " ");
+                    com.Dispose();
+                    conexion.Close();
+                }
+            }
+            return aux;
+        }
+
         // Metodo que devuelve todos los cursos que han sido registrados en la bbdd (cursos solicitados)
-        public List<CursoEN> mostrar_todos_cursos(){
+        public List<CursoEN> mostrar_todos_cursos()
+        {
+
+            int num;
+
+            using (SqlConnection conexion = new SqlConnection(BDD))
+            {
+                string sql = "select count(id) from curso";
+
+                conexion.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = conexion;
+                com.CommandText = sql;
+                com.CommandType = CommandType.Text;
+
+                num = (int)com.ExecuteScalar();
+                com.Dispose();
+                conexion.Close();
+            }
+
             List<CursoEN> cursos = new List<CursoEN>();
+
+            int id_max = Last_ID();
+            int id_min = Min_ID();
+            for (int i = id_min; i < id_max; i++)
+            {
+                cursos.Add(mostrar_curso(i));
+            }
             return cursos;
+        }
+
+        public int Last_ID()
+        {
+            int id = 0;
+            SqlDataReader dr;
+            try
+            {
+                conex.Open();
+                string operation = "Select max(idCurso) from curso";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    id = dr.GetInt32(0);
+                    id++;
+                }
+                else
+                    id = 1;
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return id;
+        }
+
+        public int Min_ID()
+        {
+            int id = 0;
+            SqlDataReader dr;
+            try
+            {
+                conex.Open();
+                string operation = "Select min(idCurso) from curso";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                    id = dr.GetInt32(0);
+                else
+                    id = 1;
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return id;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["USER"] == null)
+            if (Session["USER"] == null && Session["PROFESSOR"] == null)
                 Response.Redirect("~/inicio.aspx");
         }
     }

@@ -1,6 +1,7 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebApplication1.Master1" %>  
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master1.master.cs" Inherits="WebApplication1.Master1" %>
 
 <!DOCTYPE html>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -22,7 +23,10 @@
 		</noscript>
 </head>
 <body>
+
     <form id="form1" runat="server" style="width:100%; height:100%;">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    
    
        <div class="wrapper style1">
 
@@ -44,14 +48,7 @@
                                 <li><asp:LinkButton ID="Qsomos" runat="server" ForeColor="White"  OnClick="RedirectQsomos"  Font-Underline="false">Quiénes somos</asp:LinkButton></li>
                                 <li><asp:LinkButton ID="AvisoLegal" runat="server" ForeColor="White"  OnClick="RedirectAviso"   Font-Underline="false">Aviso legal</asp:LinkButton></li>
                              
-						       <!-- <li class="active"><a href="inicio.aspx">Inicio</a></li>
-						        <li><a href="cursos.aspx" runat="server">Cursos</a></li>
-                                <li><a href="ofertas.aspx" runat="server">Ofertas</a></li>
-                                <li><a href="comocomprar.aspx" runat="server">Cómo comprar</a></li>
-						        <li><a href="quienes.aspx" runat="server">Quiénes somos</a></li>
-                                <li><a href="avisolegal.aspx" runat="server">Aviso legal</a></li>
-                                <li>|</li>
-                                -->
+						    
                                 
                                 <li>|</li>
                                 
@@ -84,45 +81,51 @@
         </asp:ContentPlaceHolder>
     </div>
 
-        <!-- Footer -->
-		<div id="footer" class="wrapper style2">
-			<div class="container">
-				<section>
-					<header class="major">
-						<h2>¿Tienes alguna pregunta?</h2>
-						<span class="byline">¡No lo dudes y contacta con nosotros!</span>
-					</header>
-					<form method="post" action="#">
-						<div class="row half">
-							<div class="12u">
+         <!-- Footer -->
+  <div id="footer" class="wrapper style2">
+   <div class="container">
+    <section>
+     <header class="major">
+      <h2>¿Tienes alguna pregunta?</h2>
+      <span class="byline">¡No lo dudes y contacta con nosotros!</span>
+     </header>
+     <form method="post" action="#">
+      <div class="row half">
+       <div class="12u">
                                 <asp:TextBox ID="NickSend" Text="Nick" runat="server"> </asp:TextBox>
-							</div>
-						</div>
-						<div class="row half">
-							<div class="12u">
-                                <asp:TextBox ID="EmailSend" Text="Email" runat="server"> </asp:TextBox>							
-							</div>
-						</div>
-						<div class="row half">
-							<div class="12u">
-                                <asp:TextBox name="Mensaje" ID="Mensaje" Text="Mensaje" runat="server" ></asp:TextBox>								
-							</div>
-						</div>
-						<div class="row half">
-							<div class="12u">
-								<ul class="actions">
-									<li>
-                                        <asp:Button id="ButtonEmail" runat="server" OnClick="SendMail" Text="Enviar"></asp:Button> 
-									</li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</section>
-			</div>
-		</div>
+       </div>
+      </div>
+      <div class="row half">
+       <div class="12u">
+                                <asp:TextBox ID="EmailSend" Text="Email" runat="server"> </asp:TextBox>       
+       </div>
+      </div>
+      <div class="row half">
+       <div class="12u">
+                                
+                                <asp:TextBox name="Mensaje" ID="Mensaje" runat="server" Text="Mensaje" ></asp:TextBox>
+                                
 
-	<!-- Copyright -->
+                                
+                                    
+       </div>
+      </div>
+      <div class="row half">
+       <div class="12u">
+        <ul class="actions">
+         <li>
+                                        <asp:Button id="ButtonEmail" runat="server" OnClick="SendMail" Text="Enviar" ></asp:Button> 
+         </li>
+        </ul>
+       </div>
+      </div>
+     </form>
+    </section>
+   </div>
+  </div>
+
+ <!-- Copyright -->
+
 		<div id="copyright">
 			<div class="container">
 				<div class="copyright">

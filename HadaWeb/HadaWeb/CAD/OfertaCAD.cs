@@ -42,8 +42,9 @@ namespace PracticaGrupalHADA
             nuevafila[0] = oferta.IdOferta;
             nuevafila[1] = oferta.Nombre;
             nuevafila[2] = oferta.Avatar;
-            nuevafila[3] = oferta.Curso1;
-            nuevafila[4] = oferta.Curso2;
+            nuevafila[3] = oferta.Categoria;
+            nuevafila[4] = oferta.Curso1;
+            nuevafila[5] = oferta.Curso2;
             t.Rows.Add(nuevafila);
             SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
             da.Update(bdvirtual, "oferta");
@@ -62,7 +63,7 @@ namespace PracticaGrupalHADA
         public void modificar_oferta(OfertaEN oferta){
             // Aqui realizamos el update en la bbdd
             conex.Open();
-            SqlCommand com = new SqlCommand("update oferta set  idOferta = " + ", nombre = '" + oferta.Nombre + "', avatar = '" + oferta.Avatar + "', curso1 = " + oferta.Curso1 + ", curso2 =" + oferta.Curso2 + "where idOferta = " + oferta.IdOferta, conex);
+            SqlCommand com = new SqlCommand("update oferta set  idOferta = " + ", nombre = '" + oferta.Nombre + "', avatar = '" + oferta.Avatar + "', categoria = '"+ oferta.Categoria + "', curso1 = " + oferta.Curso1 + ", curso2 =" + oferta.Curso2 + "where idOferta = " + oferta.IdOferta, conex);
             com.ExecuteNonQuery();
             conex.Close();
         }
@@ -82,6 +83,7 @@ namespace PracticaGrupalHADA
                 oferta.IdOferta = Int32.Parse(dr["idOferta"].ToString());
                 oferta.Nombre = dr["nombre"].ToString();
                 oferta.Avatar = dr["avatar"].ToString();
+                oferta.Categoria = dr["categoria"].ToString();
                 oferta.Curso1 = Int32.Parse(dr["curso1"].ToString());
                 oferta.Curso2 = Int32.Parse(dr["curso2"].ToString());
                 dr.Close();
@@ -100,6 +102,114 @@ namespace PracticaGrupalHADA
             }
             return oferta;
 
+        }
+
+        public string nombresOfertasCAD(string a)
+        {
+            string aux = "";
+            int id_max = Last_ID();
+            int id_min = Min_ID();
+            for (int i = id_min; i < id_max; i++)
+            {
+                using (SqlConnection conexion = new SqlConnection(BDD))
+                {
+                    string sql2 = "";
+
+                    if (a != "null")
+                    {
+                        sql2 = "select nombre from oferta where categoria = '" + a + "' and idOferta = " + i;
+                    }
+                    else
+                    {
+                        sql2 = "select nombre from oferta where idOferta = " + i;
+                    }
+
+                    conexion.Open();
+
+                    SqlCommand com = new SqlCommand();
+                    com.Connection = conexion;
+                    com.CommandText = sql2;
+                    com.CommandType = CommandType.Text;
+
+                    aux += (com.ExecuteScalar() + " ");
+                    com.Dispose();
+                    conexion.Close();
+                }
+            }
+            return aux;
+        }
+
+        // Metodo que devuelve todos los cursos que han sido registrados en la bbdd (cursos solicitados)
+        public List<OfertaEN> mostrar_todas_ofertas()
+        {
+            List<OfertaEN> oferta = new List<OfertaEN>();
+
+            int id_max = Last_ID();
+            int id_min = Min_ID();
+            for (int i = id_min; i < id_max; i++)
+            {
+                oferta.Add(mostrar_oferta(i));
+            }
+            return oferta;
+        }
+
+        public int Last_ID()
+        {
+            int id = 0;
+            SqlDataReader dr;
+            try
+            {
+                conex.Open();
+                string operation = "Select max(idOferta) from oferta";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    id = dr.GetInt32(0);
+                    id++;
+                }
+                else
+                    id = 1;
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return id;
+        }
+
+        public int Min_ID()
+        {
+            int id = 0;
+            SqlDataReader dr;
+            try
+            {
+                conex.Open();
+                string operation = "Select min(idOferta) from oferta";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                    id = dr.GetInt32(0);
+                else
+                    id = 1;
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return id;
         }
     }
 }

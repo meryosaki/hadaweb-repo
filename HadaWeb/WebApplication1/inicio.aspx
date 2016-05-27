@@ -22,25 +22,18 @@
                             <style>
                             .resaltar{background-color:#FF0;}
                             </style> 
-                            <script type='text/javascript' >
-                                $.expr[':'].icontains = function (obj, index, meta, stack) {
-                                    return (obj.textContent || obj.innerText || jQuery(obj).text() || '').toLowerCase().indexOf(meta[3].toLowerCase()) >= 0;
-                                };
-                                $(document).ready(function () {
-                                    $('#buscador').keyup(function () {
-                                        buscar = $(this).val();
-                                        $('#lista li').removeClass('resaltar');
-                                        if (jQuery.trim(buscar) != '') {
-                                            $("#lista li:icontains('" + buscar + "')").addClass('resaltar');
-                                        }
-                                    });
-                                });
-                             </script> 
-
-                            <ul id="Ul2"><input name="buscador" id="Text2" type="text" placeholder="Buscar en toda la web" /><p></p>                              
-                            <p ALIGN=right>
-                            <a href="cursos.aspx" class="button small"><img src="img/lupa07.png"/></a>
-                            </p>
+                            <!--Buscador-->
+                            <asp:TextBox id="buscador" Text="" Width="1200px" runat="server" placeholder="Buscar"></asp:TextBox><p></p>                              
+                            
+                                <asp:DropDownList ID="DropDownList1" runat="server">
+                                <asp:ListItem Selected="True" Value="Cursos"></asp:ListItem>
+                                <asp:ListItem Value="Ofertas"></asp:ListItem>
+                                </asp:DropDownList>
+                                <p align="right">
+                            <asp:Button runat="server" ID="Buton" Text="Buscar" OnClick="Buton_Click"/>
+                                </p>
+                            
+                            <!-- hasta aqui-->
                             <!-- <img src="images/separador01.png" alt="" /> -->
                             <hr size="4px" width="100%" align="center" color="white"/>
 
@@ -126,7 +119,7 @@
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

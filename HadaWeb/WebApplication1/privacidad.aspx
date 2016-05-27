@@ -106,7 +106,7 @@
                                                     Estimado usuario, se le notifica que el Aviso de Privacidad ha sido modificado el día 20 de Mayo de 2016
                                                     </br>
                                                     <p></p>
-                                                    <a href="contacto.aspx">Volver atrás</a>
+                                                    <a href="avisolegal.aspx">Volver atrás</a>
 										</ul></span>
 									</header>
 									</section>
@@ -130,7 +130,4 @@
 							</div>
 						</div>
 					</div>
-				<!-- /Main --> 
-
-	</div>
 </asp:Content>

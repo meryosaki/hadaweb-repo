@@ -13,6 +13,8 @@ namespace WebApplication1
         {
             if (Session["USER"] == null)
                 Response.Redirect("~/inicio.aspx");
+            if (GridView1.Rows.Count == 0)
+                NoPedidos.Visible = true;
         }
     }
 }

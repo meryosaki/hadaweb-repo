@@ -28,18 +28,9 @@
                                 <hr size="4px" width="100%" align="center" color="gray"/>
 									<input type="hidden" name="accountType" value="private" />
 									<li>
-                                        <strong>Actualmente dispones de: 56 puntos.</strong><p></p>
-										<p><strong>¿Quieres canjearlos en tu próxima compra?   
-											<label>
-												<input type="radio" id="tqa_register_personTitleMr" name="personTitle" value="Mr"  /> Sí
-											</label>
-											<label>
-												<input type="radio" id="tqa_register_personTitleMrs" name="personTitle" value="Mrs"  /> No
-											</label>
-                                            </strong></p></font>
-								</ul>
-								<a href="micuenta.aspx" class="button">Aceptar</a>   <a href="micuenta.aspx" class="button">Cancelar</a>
-
+                                        <strong>Actualmente dispones de: <asp:Label ID="Puntos" runat="server"></asp:Label> puntos.</strong><p></p>
+										<p>Si tienes 100 o más puntos se descontará un 10% en tu próxima compra.</p>
+                                </ul>
 							</fieldset></div>
                            
 						</div> <p></p> <div><hr size="4px" width="100%" align="center" color="white"/></div>
@@ -67,7 +58,7 @@
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

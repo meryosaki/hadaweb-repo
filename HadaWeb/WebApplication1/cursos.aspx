@@ -3,72 +3,114 @@
     <div id="extra">
 						<div class="container">
                         <strong>Selecciona una categoría:</strong>
-                        <select name="OS">
-                           <option value="1">Estudios</option> 
-                           <option value="2">Cocina</option> 
-                           <option value="3">Ocio y cultura</option>
-                           <option value="10">Deportes</option> 
-                           <option value="11">Gabinete psicológico</option> 
-                           <option value="12">Otros</option> 
-                        </select>
+                        <asp:DropDownList ID="DropDownList1" runat="server">
+                            <asp:ListItem Selected="True" Value="Estudios"></asp:ListItem>
+                            <asp:ListItem Value="Cocina"></asp:ListItem>
+                            <asp:ListItem Value="Ocio y cultura"></asp:ListItem>
+                            <asp:ListItem Value="Deportes"></asp:ListItem>
+                            <asp:ListItem Value="Gabinete psicológico"></asp:ListItem>
+                            <asp:ListItem Value="Otros"></asp:ListItem>
+                        </asp:DropDownList>
 
-                            <ul class="style">
-								<h3>Cursos</h3>
-                                <hr size="4px" width="100%" align="center" color="white"/>
-							</ul>
-                            
-							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen01.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-ajedrez.aspx" class="button">Ajedrez</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen02.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-photoshop.aspx" class="button">Photoshop</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen03.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-balonmano.aspx" class="button">Balonmano</a> </div>
-								</section>
-							</div>
-							<div class="row no-collapse-1">
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen04.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-natacion.aspx" class="button">Natación</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen05.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-buceo.aspx" class="button">Buceo</a> </div>
-								</section>
-								<section class="4u"> <a href="#" class="image featured"><img src="images/imagen06.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-matematicas.aspx" class="button">Matemáticas</a> </div>
-								</section>
-                                <section class="4u"> <a href="#" class="image featured"><img src="images/imagen07.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-biologia.aspx" class="button">Biología</a> </div>
-								</section>
-                       			<section class="4u"> <a href="#" class="image featured"><img src="images/imagen08.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-fotografia.aspx" class="button">Fotografía</a> </div>
-								</section>
-                                <section class="4u"> <a href="#" class="image featured"><img src="images/imagen09.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-quimica.aspx" class="button">Química</a> </div>
-								</section>
-                                <section class="4u"> <a href="#" class="image featured"><img src="images/imagen10.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-badminton.aspx" class="button">Bádminton</a> </div>
-								</section>
-                				<section class="4u"> <a href="#" class="image featured"><img src="images/imagen11.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-fisica.aspx" class="button">Física</a> </div>
-								</section>
-                                <section class="4u"> <a href="#" class="image featured"><img src="images/imagen12.jpg" alt=""></a>
-									<div class="box">
-										<a href="curso-damas.aspx" class="button">Damas</a> </div>
-								</section>
-							</div>
+
+                        <asp:Button ID="Button1" runat="server" Text="Mostrar" Onclick="mostrar_Click"/>
+                             <columns>
+                                    <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="3">
+                                        <AlternatingItemTemplate>
+                                            <td runat="server" style="" aling="center">
+                                                
+                                                <asp:Image id="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
+                                                <br />
+                                                <asp:Button id="boton" runat="server" Text='<%# Bind("nombre") %>' OnClick="boton_Click"/>
+                                                    
+                                                <br />
+                                            </td>
+                                        </AlternatingItemTemplate>
+                                        <EditItemTemplate>
+                                            <td runat="server" style="">
+                                                
+                                                <asp:TextBox ID="avatarTextBox" runat="server" Text='<%# Bind("avatar") %>' />
+                                                <br />
+                                                
+                                                <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
+                                                <br />
+                                                <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Actualizar" />
+                                                <br />
+                                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancelar" />
+                                                <br /></td>
+                                        </EditItemTemplate>
+                                        <EmptyDataTemplate>
+                                            <table runat="server" style="">
+                                                <tr>
+                                                    <td>No se han devuelto datos.</td>
+                                                </tr>
+                                            </table>
+                                        </EmptyDataTemplate>
+                                        <EmptyItemTemplate>
+                                        <td runat="server" />
+                                        </EmptyItemTemplate>
+                                        <GroupTemplate>
+                                            <tr id="itemPlaceholderContainer" runat="server">
+                                                <td id="itemPlaceholder" runat="server"></td>
+                                            </tr>
+                                        </GroupTemplate>
+                                        <InsertItemTemplate>
+                                            <td runat="server" style="">
+                                                
+                                                <asp:TextBox ID="avatarTextBox" runat="server" Text='<%# Bind("avatar") %>' />
+                                                <br />
+                                                
+                                                <asp:TextBox ID="nombreTextBox" runat="server" Text='<%# Bind("nombre") %>' />
+                                                <br />
+                                                <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
+                                                <br />
+                                                <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                                                <br /></td>
+                                        </InsertItemTemplate>
+                                        <ItemTemplate>
+                                            <td runat="server" style="">
+                                                 
+                                                 <asp:Image ID="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
+                                                <br />
+                                                 <asp:Button ID="boton" runat="server" Text='<%# Bind("nombre") %>' OnClick="boton_Click"/>
+                                                 <br />
+                                            </td>
+                                        </ItemTemplate>
+                                        <LayoutTemplate>
+                                            <table runat="server">
+                                                <tr runat="server">
+                                                    <td runat="server">
+                                                        <table id="groupPlaceholderContainer" runat="server" border="0" style="">
+                                                            <tr id="groupPlaceholder" runat="server">
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr runat="server">
+                                                    <td runat="server" style=""></td>
+                                                </tr>
+                                            </table>
+                                        </LayoutTemplate>
+                                        <SelectedItemTemplate>
+                                            <td runat="server" style="">
+                                                
+                                                <asp:Image ID="avatar" runat="server" ImageUrl='<%#"~/images/" + Eval("avatar") %>' Width="300px" />
+                                                <br />
+                                                <asp:Label ID="nombreLabel" runat="server" Text='<%# Eval("nombre") %>' />
+                                                <br />
+                                            </td>
+                                        </SelectedItemTemplate>
+                            </asp:ListView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT avatar, nombre FROM curso WHERE (@nombre LIKE '%' + nombre + '%') or (nombre LIKE '%' + @nombre + '%')">
+                                    <SelectParameters>
+                                        <asp:ControlParameter ControlID="prueba" Name="nombre" PropertyName="Text" Type="String" />
+                                    </SelectParameters>
+                            </asp:SqlDataSource>
+                            </columns>
+
+                            <asp:Label ID ="prueba" Text="" runat="server"></asp:Label>
+       
+                            <div>
                             <p></p>
                             <hr size="4px" width="100%" align="center" color="white"/>
 						</div>

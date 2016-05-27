@@ -46,32 +46,46 @@
                                     background-color: #76DAFB;
                                   }
                                 </style>
-                                    
-<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
+                                    <asp:Label id="NoArticulos" runat="server" Text="No hay articulos en el carrito" ></asp:Label>
+                                    <!--Gridview de pedidos-->
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" onrowcommand="EliminarArticulo">
                                         <Columns>
-                                            <asp:BoundField DataField="avatar" HeaderText="avatar" SortExpression="avatar" />
-                                            <asp:BoundField DataField="nombre" HeaderText="nombre" SortExpression="nombre" />
-                                            <asp:BoundField DataField="precio" HeaderText="precio" SortExpression="precio" />
+                                            <asp:ImageField DataImageUrlField="avatar" DataImageUrlFormatString="~/images/{0}" HeaderText=" Imagen " ControlStyle-Width="100px" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<ControlStyle Width="100px"></ControlStyle>
+
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+                                            </asp:ImageField>
+                                            <asp:BoundField DataField="nombre" HeaderText=" Nombre del artículo " SortExpression="nombre" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="importe_total" HeaderText=" Precio " SortExpression="precio" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle">
+<FooterStyle HorizontalAlign="Center" VerticalAlign="Middle"></FooterStyle>
+                                            </asp:BoundField>
+                                            <asp:ButtonField  Text="Eliminar artículo" ControlStyle-Font-Bold="true" CommandName="eliminar" />
                                         </Columns>
                                     </asp:GridView>   
-                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre], [precio] FROM [pedido], [curso] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([curso] = [idCurso])">
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT [avatar], [nombre], [importe_total] FROM [pedido], [curso] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([curso] = [idCurso]) AND ([estadoPedido] like 'Activo')
+                                                                                                                                                                        UNION
+                                                                                                                                                                       SELECT [avatar], [nombre], [importe_total] FROM [pedido], [oferta] WHERE ([cliente] LIKE '%' + @cliente + '%') AND ([oferta] = [idOferta]) AND ([estadoPedido] like 'Activo') ">
                                         <SelectParameters>
                                             <asp:SessionParameter Name="cliente" SessionField="USER" Type="String" />
                                         </SelectParameters>
-                                    </asp:SqlDataSource>                                
-                                <td align="right"><strong> Importe total </strong></td>
-                                </tr>
-                                <tr>
-                                  <td align="right"><strong><font face="arial"> 67€ </font></strong></td>
-                                </tr>
+                                    </asp:SqlDataSource>
                                 
-
+                                <asp:Label ID="Label1" runat="server" Text="Importe total sin descuento por puntos: " Font-Bold="true" Font-Names="arial" ></asp:Label>
+                                <asp:Label ID="Importe" runat="server" Text=""></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text=" €" Font-Bold="true" Font-Names="arial" ></asp:Label>
+                                <br />
+                                <asp:Label ID="Label2" runat="server" Text="Importe total con descuento por puntos: " Font-Bold="true" Font-Names="arial" ></asp:Label>
+                                <asp:Label ID="ImportePuntos" runat="server" Text=""></asp:Label>  
+                                <asp:Label ID="Label4" runat="server" Text=" €" Font-Bold="true" Font-Names="arial" ></asp:Label>
                                 <table>
                                                                   
                                 </table>
  
 								</ul>
-								<a href="misdatos.aspx" class="button">Confirmar pedido</a> 
+                                <asp:Button ID="ConfirmarPedido" runat="server" Text="Confirmar pedido" Onclick="confirmarP"/>
+								<asp:Button ID="BorrarPedido" runat="server" Text="Borrar pedido" Onclick="borrarP"/>
 
 							</fieldset></div>
 
@@ -101,7 +115,7 @@
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

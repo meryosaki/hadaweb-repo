@@ -85,5 +85,34 @@ namespace PracticaGrupalHADA
                 Console.WriteLine("Error creando Usuario en mostrar_clientes: %s\n", e);
             }
         }
+
+
+        public void recuperarPuntos()
+        {
+            try
+            {
+                cliente_cad = new ClienteCAD("asd");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error recuperando puntos: %s\n", e);
+            }
+            puntosTotales = cliente_cad.recuperarPuntos(this.Nick);
+
+        }
+
+        public void restarPuntos()
+        {
+            try
+            {
+                cliente_cad = new ClienteCAD("asd");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error restando puntos: %s\n", e);
+            }
+            cliente_cad.restarPuntos(this.Nick);
+
+        }
     }
 }
