@@ -159,5 +159,25 @@ namespace PracticaGrupalHADA
                 Console.WriteLine("Error creando Curso: %s\n", e);
             }
         }
+
+        public string numEN(string a)
+        {
+            curso_cad = new CursoCAD("bbddSQLhada");
+            return curso_cad.nombresCursosCAD(a);
+        }
+
+        public List<CursoEN> mostrar_todos_cursosEN()
+        {
+            try
+            {
+                curso_cad = new CursoCAD("bbddSQLhada");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error mostrando Cursos: %s\n", e);
+            }
+            return curso_cad.mostrar_todos_cursos();
+        }
     }
 }

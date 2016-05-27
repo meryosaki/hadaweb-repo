@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using PracticaGrupalHADA;
 
 namespace WebApplication1
 {
@@ -17,8 +18,37 @@ namespace WebApplication1
         {
             if (Session["USER"] == null)
                 Response.Redirect("~/identificarse.aspx");
-            else if(Session["USER"] != null)
+            else
                 Response.Redirect("~/micarrito.aspx");
+        }
+        protected void comprar_Click(object sender, EventArgs e)
+        {
+            if (Session["USER"] == null)
+            {
+                Response.Redirect("identificarse.aspx");
+            }
+            else
+            {
+                string fecha = (DateTime.Today).ToString("d");
+                DateTime f = new DateTime();
+                f = DateTime.Parse(fecha);
+                //string cadena = "";
+                PedidoEN pedido = new PedidoEN();
+                pedido.IdPedido = 1;
+                pedido.Puntos = 35;
+                pedido.EstadoPago = null;
+                pedido.FormaPago = null;
+                pedido.EstadoPedido = "Activo";
+                pedido.Cliente = Session["USER"].ToString();
+                pedido.Descripcion = "Curso de Badminton";
+                pedido.F_compra = f;
+                pedido.Importe_total = 35;
+                pedido.Curso = 21;
+                pedido.Oferta = null;
+                pedido.insertar_pedido();
+                Response.Redirect("micarrito.aspx");
+            }
+
         }
     }
 }

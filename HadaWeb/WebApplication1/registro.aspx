@@ -19,12 +19,9 @@
                             }</style>
                             <p></p><p></p>
                             <div align="center">
-                            <img src="images/avatar.png" alt="" />
                             <p></p>
-                            <form enctype="multipart/form-data" action="" method="POST">
-<input class="button nopopup" type="file" name="uploadedfile" value="Seleccione imagen"/>
-</form>
                             <p></p>
+
                             </div>
                             <p></p>
                             <div class="box-white">
@@ -32,16 +29,18 @@
                             
 								<ul align="left"><h2>MIS DATOS</h2><p></p>
                                 <hr size="4px" width="100%" align="center" color="gray"/>
-                                    <asp:Label ID="Error" runat="server" Text="" ForeColor ="Red"></asp:Label>
+                                    <asp:Label ID="Error" runat="server" Text="" ForeColor ="Red" ></asp:Label>
 									<li>
-										<span><strong>Género</strong> <em></em></span>
+										<span><strong>Usuario a Identificar</strong> <em></em></span>
 										<div class="cf">
-											<label>
-												<input type="radio" id="tqa_register_personTitleMr" name="personTitle" value="Mr"  /> Hombre
-											</label>
-											<label>
-												<input type="radio" id="tqa_register_personTitleMrs" name="personTitle" value="Mrs"  /> Mujer
-											</label>
+                                           <asp:Label ID="Click" runat="server" Text="Debe seleccionar una opcion:" Visible="true"></asp:Label>
+                                            <br />
+                                            <asp:Panel ID="Panel1" runat="server">
+                                                <asp:RadioButton ID="ClienteButton" runat="server" text="Cliente" GroupName="Panel1" checked="true"/>
+                                            <br />
+                                            <asp:RadioButton ID="ProfesorButton" runat="server" Text="Profesor"  GroupName="Panel1"  />                                                 
+                                            </asp:Panel>
+                                             
 										</div>
 									</li><p></p><li>
 										<label><strong>Nick</strong><em>*</em></label>

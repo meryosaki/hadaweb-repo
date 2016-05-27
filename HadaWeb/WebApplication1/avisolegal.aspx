@@ -12,7 +12,7 @@
 									</header>
 									<div class="row half">
 										
-											<ul class="icons">
+											<ul class="icons"><!-- Nuestras Redes sociales, todas conectadas -->
 					<li><a href="https://www.facebook.com/Serv1rent/"   target="_blank" class="fa fa-facebook"><span>Facebook</span></a></li>
 					<li><a href="https://twitter.com/Serv1rent"   target="_blank" class="fa fa-twitter"><span>Twitter</span></a></li>
 					<li><a href="https://www.instagram.com/servirent/"  target="_blank"  class="fa fa-instagram"><span>Instagram</span></a></li>
@@ -37,14 +37,13 @@
 		
 						</div>
 					</div>
-				<!-- /Page -->
 
 				<!-- Main -->
 					<div align="justify" id="main">
 						<div class="container">
 							<div class="row"> 
 								
-								<!-- Content -->
+								<!-- Diferentes opciones  que se pueden encontrar en la pagina, introducimos soporte, aviso legal... -->
 								<div class="6u">
 									<section>
 										<ul class="style">

@@ -101,6 +101,35 @@ namespace PracticaGrupalHADA
 
         }
 
-        
+
+        public int recuperarPuntos(string nick)
+        {
+            int puntos = 0;
+            SqlDataReader dr;
+            
+                conex.Open();
+                string operation = "Select puntosTotales from cliente inner join usuario on idUsuario = idCliente where nick = '" + nick + "'";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                puntos = dr.GetInt32(0);
+                
+                dr.Close();
+           
+                conex.Close();
+            
+            return puntos;
+        }
+
+        public void restarPuntos(string nick)
+        {
+            
+                conex.Open();
+                string operation = "Update cliente set puntosTotales = puntosTotales - 100 from cliente, usuario where idUsuario = idCliente and nick = '" + nick + "'";
+                SqlCommand com = new SqlCommand(operation, conex);
+                com.ExecuteNonQuery();
+                conex.Close();
+           
+        }
     }
 }

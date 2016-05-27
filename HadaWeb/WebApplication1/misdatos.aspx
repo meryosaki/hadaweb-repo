@@ -20,7 +20,7 @@ border-radius: 5px;
 }</style>
                             <p></p><p></p>
                             <div align="center">
-                            <img src="images/avatar02.png.jpg" alt="" />
+                                <asp:Image ID="ImagePerfil" runat="server" ControlStyle-Width="300px"/>
 
                             <p></p>
                             </div>
@@ -32,24 +32,19 @@ border-radius: 5px;
                                 <hr size="4px" width="100%" align="center" color="gray"/>
 									<input type="hidden" name="accountType" value="private" />
 									<li>
-										<span><strong>Género</strong></span>
-										<p>
-											<label>
-												Mujer
-											</label>
-										</p>
+
 									</li>
                                     <li>
 										<span><strong>Nick</strong></span>
-                                       <p> <asp:Label ID="Label1" runat="server" ></asp:Label></p>
+                                       <p> <asp:Label ID="Nick" runat="server" ></asp:Label></p>
 									
 									</li><li>
 										<span><strong>Nombre completo</strong></span>
-                                        <p><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></p>
+                                        <p><asp:Label ID="Nombre" runat="server" ></asp:Label></p>
 									</li>
                                     <li>
 										<span><strong>Dirección de E-mail</strong></span>
-                                       <p> <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label></p>
+                                       <p> <asp:Label ID="Email" runat="server"></asp:Label></p>
 									</li>
                                 <a href="misdatoseditar.aspx" class="button">Editar mis datos</a>
                                 <a href="mipasseditar.aspx" class="button">Cambiar contraseña</a>
@@ -83,7 +78,7 @@ border-radius: 5px;
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

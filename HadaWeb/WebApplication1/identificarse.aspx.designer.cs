@@ -13,22 +13,31 @@ namespace WebApplication1 {
     public partial class identificarse {
         
         /// <summary>
-        /// Control login.
+        /// Control Nick.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox login;
+        protected global::System.Web.UI.WebControls.TextBox Nick;
         
         /// <summary>
-        /// Control RegularLoginNick.
+        /// Control CustomValidatorNick.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularLoginNick;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidatorNick;
+        
+        /// <summary>
+        /// Control RegularNick.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularNick;
         
         /// <summary>
         /// Control password.

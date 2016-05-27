@@ -39,23 +39,27 @@ border-radius: 5px;
 <ul class="style">
     <h3>ENTRAR</h3><p></p>
     <label for="LoginForm_email" class="required"><span class="required">Usuario</span></label>
-              <asp:TextBox ID="login" runat="server" Text=""></asp:TextBox>
+              <asp:TextBox ID="Nick" runat="server" Text=""></asp:TextBox>
     			<div class="inputtext-fancy"></div>
-    <asp:RegularExpressionValidator ID="RegularLoginNick" runat="server" 
-        ControlToValidate="login" 
-        ValidationExpression="[\w]{4,10}"
-        ErrorMessage="Nombre de usuario incorrecto"
-        ForeColor="Red">
-
-    </asp:RegularExpressionValidator>
+                                        <asp:CustomValidator  ID="CustomValidatorNick"  
+                                            ControlToValidate = "Nick" 
+                                            OnServerValidate="ComprobarUsuario" runat="server"          
+                                            ErrorMessage="El nick o la contraseña son incorrectos"
+                                            ForeColor ="Red">         
+                                        </asp:CustomValidator>
+                                        <br />
+                                       <!-- <asp:RegularExpressionValidator ID="RegularNick" runat="server" 
+                                            ErrorMessage="El nick tiene que tener de 4 a 10 caracteres y solo puede contener letras y números"
+                                            ControlToValidate="Nick"
+                                            ValidationExpression="[\w]{4,10}"
+                                            ForeColor ="Red">
+                                        </asp:RegularExpressionValidator>-->
     <p></p>
     <label for="LoginForm_email" class="required"><span class="required">Contraseña</span></label>
             <asp:TextBox ID="password" runat="server" type="password" Text=""></asp:TextBox>
 						<div class="inputtext-fancy">
                             <asp:Button ID="Entrar" runat="server" Text="Entrar" onclick="crearCliente"/>
            
-            <a href="/site/forgot" class="defaultPopup noinhome forgotLink">He olvidado la contraseña</a>
-
             
           
 		</form>	<p></p></div></ul>
@@ -88,7 +92,7 @@ border-radius: 5px;
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

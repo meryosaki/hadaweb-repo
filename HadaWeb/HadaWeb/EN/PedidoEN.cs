@@ -8,8 +8,9 @@ namespace PracticaGrupalHADA
 {
     public class PedidoEN
     {
-        private int idPedido, puntos, cliente, curso;
-        private string estadoPago, formaPago, estadoPedido;
+        private int idPedido, puntos;
+        private int? curso, oferta;
+        private string estadoPago, formaPago, estadoPedido, cliente;
         private String descripcion;
         private Nullable<DateTime> f_compra;
         private Double importe_total;
@@ -21,10 +22,16 @@ namespace PracticaGrupalHADA
             set { idPedido = value; }
         }
 
-        public int Curso
+        public int? Curso
         {
             get { return curso; }
             set { curso = value; }
+        }
+
+        public int? Oferta
+        {
+            get { return oferta; }
+            set { oferta = value; }
         }
 
         public int Puntos
@@ -51,7 +58,7 @@ namespace PracticaGrupalHADA
             set { estadoPedido = value; }
         }
 
-        public int Cliente
+        public string Cliente
         {
             get { return cliente; }
             set { cliente = value; }
@@ -76,7 +83,7 @@ namespace PracticaGrupalHADA
         }
 
 
-        private void asignar (int idPedido, int puntos, string estadoPago, string formaPago, string estadoPedido, int cliente, String descripcion, Nullable<DateTime> f_compra, Double importe_total, int curso)
+        private void asignar (int idPedido, int puntos, string estadoPago, string formaPago, string estadoPedido, string cliente, String descripcion, Nullable<DateTime> f_compra, Double importe_total, int? curso, int? oferta)
         {
             this.idPedido = idPedido;
             this.puntos = puntos;
@@ -88,16 +95,17 @@ namespace PracticaGrupalHADA
             this.f_compra = f_compra;
             this.importe_total = importe_total;
             this.curso = curso;
+            this.oferta = oferta;
         }
 
         public PedidoEN()
         {
-            asignar(0, 0, "", "", "", 0, "", null, 0d, 0);
+            asignar(0, 0, "", "", "", "", "", null, 0d, null, null);
         }
 
-        public PedidoEN(int idPedido, int puntos, string estadoPago, string formaPago, string estadoPedido, int cliente, String descripcion, Nullable<DateTime> f_compra, Double importe_total, int curso)
+        public PedidoEN(int idPedido, int puntos, string estadoPago, string formaPago, string estadoPedido, string cliente, String descripcion, Nullable<DateTime> f_compra, Double importe_total, int? curso, int? oferta)
         {
-            asignar(idPedido, puntos, estadoPago, formaPago, estadoPedido, cliente, descripcion, f_compra, importe_total, curso);
+            asignar(idPedido, puntos, estadoPago, formaPago, estadoPedido, cliente, descripcion, f_compra, importe_total, curso, oferta);
         }
 
         public void insertar_pedido()
@@ -151,6 +159,51 @@ namespace PracticaGrupalHADA
                 Console.WriteLine("Error creando Pedido: %s\n", e);
             }
         }
+
+        public void Confirmar()
+        {
+            try
+            {
+                pedido_cad = new PedidoCAD("bbddSQLhada");
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error creando Pedido: %s\n", e);
+            }
+            pedido_cad.SumarPuntos(cliente);
+            pedido_cad.Confirmar(cliente,formaPago);           
+        }
+
+
+
+        public void borrar_pedido_carrito(string curso) {
+            try
+            {
+                pedido_cad = new PedidoCAD("bbddSQLhada");
+               
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error creando Pedido: %s\n", e);
+            }
+            pedido_cad.borrar_pedido_carrito(cliente, curso);
+        }
+
+        public void borrar_todos_los_pedidos()
+        {
+            try
+            {
+                pedido_cad = new PedidoCAD("bbddSQLhada");
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error creando Pedido: %s\n", e);
+            }
+            pedido_cad.borrar_todos_los_pedidos(cliente);  
+        }
+
     }
 }
 

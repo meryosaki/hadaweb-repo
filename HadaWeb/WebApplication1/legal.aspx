@@ -120,8 +120,28 @@
  
                                                 <p></p><b>
                                                 Aviso Legal redactado siguiendo el: Modelo de Aviso Legal web de España</b></br>
-</br><a href="contacto.aspx">Volver atrás</a>
+</br><a href="avisolegal.aspx">Volver atrás</a>
 </span> 
 									</header>
 									</section>
+                                </div>
+		
+						</div>
+					</div>
+				<!-- /Page -->
+
+				<!-- Main -->
+					<div id="main">
+						<div class="container">
+							<div class="row"> 
+								
+								<!-- Content -->
+								<div class="6u">
+									
+										
+									
+								</div>
+							</div>
+						</div>
+					</div>
 </asp:Content>

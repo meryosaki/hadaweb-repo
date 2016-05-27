@@ -8,10 +8,9 @@
                     <div id="content" class="8u skel-cell-important">
                         <section>
                             <header class="major">
-                                <h2>Clases de química</h2>
+                               <asp:Label Text="Curso química" runat="server" Font-Size="XX-Large" Font-Bold="true"></asp:Label>
                                 <hr size="4px" width="100%" align="center" color="gray"/>
                                 </div>
-                                
                             </header>    
                             
                             <div id="content">
@@ -23,12 +22,9 @@
 
                             
                              <p align=right><font align=left size=5><strong><font face="arial">Precio: 60€</font>   
-                             </strong></font><a align=right href="#" class="button">Comprar</a></p>
+                             </strong></font><asp:Button ID="comprar" Text="Comprar" OnClick="comprar_Click" runat="server"/></p>
                             <!-- FIN CODIGO VISOR DE IMAGENES --> 
-                            </div><div><strong>
-                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="ButtonReserva" runat="server" OnClick ="ButtonReservar" Text="¡Reserva ya!">
-</asp:LinkButton></strong>
-                           </div>
+                            </div>
                            <div align="justify">
                             <strong>DESCRIPCIÓN</strong>
                         
@@ -90,54 +86,19 @@ border-radius: 5px;
                         </div>
                         <p></p>
                         <div class="box-blue">
-                    <!-- ESTRELLAS VOTAR -->
-                            <style align=left>.ec-stars-wrapper {
-	                        /* Espacio entre los inline-block (los hijos, los `a`) 
-	                           http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.aspx */
-	                        font-size: 0;
-	                        /* Podríamos quitarlo, 
-		                        pero de esta manera (siempre que no le demos padding), 
-		                        sólo aplicará la regla .ec-stars-wrapper:hover a cuando
-		                        también se esté haciendo hover a alguna estrella */
-	                        display: inline-block;
-                        }
-                        .ec-stars-wrapper a {
-	                        text-decoration: none;
-	                        display: inline-block;
-	                        /* Volver a dar tamaño al texto */
-	                        font-size: 32px;
-	                        font-size: 2rem;
-	
-	                        color: #888;
-                        }
-
-                        .ec-stars-wrapper:hover a {
-	                        color: rgb(39, 130, 228);
-                        }
-                        /*
-                         * El selector de hijo, es necesario para aumentar la especifidad
-                         */
-                        .ec-stars-wrapper > a:hover ~ a {
-	                        color: #888;
-                        }</style>  
-                                                 <div align=left class="content">
-		<form class="onlyLogin done">
+                    <!-- COMENTARIO -->
+                     
+       <div align=left class="content">
+  <form class="onlyLogin done">
         <img src="images/avatar.png" width="40" height="40"/> <strong>usuario</strong>
-			<input type="hidden" name="Comment[ref_id]" value="2421972">
-            <input type="hidden" name="Comment[ref_model]" value="3">
-			<input class="noEmpty" name="Comment[content]" type="text" placeholder="Escribe algo..." autocomplete="off">
-			<button>Enviar</button>  <div class="ec-stars-wrapper">
-	                        <a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-	                        <a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-	                        <a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-	                        <a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-	                        <a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
-                        </div>
+   
+   <input class="noEmpty" name="Comment[content]" type="text" placeholder="Escribe algo..." autocomplete="off">
+            <p></p>
+            
         </form>
 
-<noscript>Necesitas tener habilitado javascript para poder votar</noscript>
                            </div>
-                           <!-- FIN ESTRELLAS VOTAR -->
+                           <!-- FIN COMENTARIO -->
 <!-- FIN CAJA DE COMENTARIOS Y PUNTUACION -->
 	</div></div>
                        <p></p>

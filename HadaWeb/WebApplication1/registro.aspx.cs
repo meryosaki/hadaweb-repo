@@ -30,12 +30,20 @@ namespace WebApplication1
                     DesplegableAno.Items.Add(item);
                 }
             }
-                
+
         }
+
+
+
+
+
+
 
         protected void Registrar(object sender, EventArgs e)
         {
-            if (Page.IsValid){
+            if (Page.IsValid)
+            {
+
                 UsuarioEN cliente = new UsuarioEN();
                 cliente.Last_ID();
                 cliente.Nick = Nick.Text;
@@ -44,18 +52,37 @@ namespace WebApplication1
                 cliente.Contrasenya = Contrasenya.Text;
                 string fecha = DesplegableDia.Text + "/" + DesplegableMes.Text + "/" + DesplegableAno.Text;
                 string mes = DesplegableMes.Text;
-                if(Convert.ToInt32(DesplegableDia.Text) > 28 && (mes == "02"))
+                if (Convert.ToInt32(DesplegableDia.Text) > 28 && (mes == "02"))
                     fecha = "28/" + DesplegableMes.Text + "/" + DesplegableAno.Text;
                 else if (Convert.ToInt32(DesplegableDia.Text) == 31 && (mes == "04" || mes == "06" || mes == "09" || mes == "11"))
                     fecha = "30/" + DesplegableMes.Text + "/" + DesplegableAno.Text;
                 cliente.F_nacimiento = Convert.ToDateTime(fecha);
                 cliente.Telefono = Telefono.Text;
                 cliente.insertar_usuario();
+                if (ClienteButton.Checked)
+                {
+                    ClienteEN client = new ClienteEN();
+                    client.IdUsuario = cliente.IdUsuario;
+                    client.insertar_cliente();
+                    Session["USER"] = cliente.Nick;
+
+                }
+                else if (ProfesorButton.Checked)
+                {
+                    ProfesorEN profesor = new ProfesorEN();
+                    profesor.IdUsuario = cliente.IdUsuario;
+                    profesor.insertar_profesor();
+                    Session["PROFESSOR"] = cliente.Nick;
+                }
+
+                Response.Redirect("~/micuenta.aspx");
             }
+
         }
 
-        protected void ComprobarUsuario(object sender, ServerValidateEventArgs e) { 
-            string nick = e.Value.ToLower();            
+        protected void ComprobarUsuario(object sender, ServerValidateEventArgs e)
+        {
+            string nick = e.Value.ToLower();
             UsuarioEN us = new UsuarioEN();
             e.IsValid = us.ComprobarNick(nick);
         }

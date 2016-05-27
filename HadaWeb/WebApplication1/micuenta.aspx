@@ -7,7 +7,7 @@
                                 <hr size="4px" width="100%" align="center" color="white"/>
 							</ul>
 							<div class="row no-collapse-1">
-                            <p></p><p></p>
+                            <p></p><p></p><p></p><p></p><p></p><p></p>
                             <style>
 .box-white {
 margin:5 5 5px;
@@ -30,16 +30,7 @@ border-radius: 2px;
 		                </form>	</div></ul>
                         </div></div><p></p> 
 
-                        <div align="middle" class="box-white">
-                        <div align="middle" class="form">
-	                    <div align="middle" class="caja-modal">      
-                        <ul align="middle" class="style">
-                        <img align="middle" src="images/iconos/estrella01.png"/>
-                        <p></p>
-                        <a href="misreservas.aspx" class="button">Mis reservas</a>
-		                </form>	</div></ul>
-                        </div></div><p></p> 
-
+                     
 
                         <div align="middle" class="box-white">
                         <div align="middle" class="form">
@@ -92,7 +83,7 @@ border-radius: 2px;
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

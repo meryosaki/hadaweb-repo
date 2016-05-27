@@ -25,55 +25,50 @@
                             <div class="box-white"> 
                             <fieldset class="box"> 
                             
-								<ul align="left"><h2>LISTA DE RESERVAS</h2>
+								<ul align="center"><h2>LISTA DE RESERVAS</h2>
                                 <hr size="4px" width="100%" align="center" color="gray"/>
 									<input type="hidden" name="accountType" value="private" />
 								
 
-                                <style>
+                                      <style>
                                   tr{
                                     /* Todas las filas blancas */
-                                    background-color: #CEE3F6;
-                                  }
-                                  tr:nth-child(2n+1){
-                                    /* Filas impares grises */
                                     background-color: white;
+                                    align-items: center;
+                                    align-content:center;
+                                    border: double;
+                                    border-color: black;
+                                    }
+                                  tr:nth-child(2n+1){
+                                    /* Filas impares grises */ 
+                                    background-color: grey;
+                                    color: white;
                                   }
                                   tr:hover{
                                     /* Filas celeste al pasar el mouse */
                                     background-color: #76DAFB;
                                   }
                                 </style>
-
-                                 <table>
-                                <tr>
-                                  <td><strong>ID Reserva&nbsp&nbsp</strong></td>
-                                  <td><strong>&nbsp&nbsp Descripción&nbsp</strong></td>
-                                  <td><strong>&nbsp&nbsp Fecha de reserva&nbsp</strong></td>
-                                  <td><strong>&nbsp&nbsp Artículo&nbsp</strong></td>
-                                </tr>
-                                
-                                <!-- <tr style="background-color:#CEE3F6; padding:3px;"> -->
-                                <tr>
-                                  <td>3333331</td>
-                                  <td>Curso ajedrez</td>
-                                  <td>&nbsp&nbsp 2013-01-12</td>
-                                  <td>&nbsp&nbsp 5555</td>
-                                </tr>
-                                <tr>
-                                  <td>3333331</td>
-                                  <td>Curso ajedrez</td>
-                                  <td>&nbsp&nbsp 2013-01-12</td>
-                                  <td>&nbsp&nbsp 5555</td>
-                                </tr>
-                                <tr>
-                                  <td>3333331</td>
-                                  <td>Curso ajedrez</td>
-                                  <td>&nbsp&nbsp 2013-01-12</td>
-                                  <td>&nbsp&nbsp 5555</td>
-                                </tr>
-                         
-                                </table>
+                                    <asp:Label id="NoPedidos" runat="server" Text="No hay pedidos" Width="1000px" Visible="false"></asp:Label>
+                                    <!--Gridview de pedidos-->  
+                                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idReserva" Width="1000px">
+                                        <Columns>
+                                            <asp:BoundField DataField="idReserva" HeaderText="IdReserva" SortExpression="idReserva" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle" ReadOnly="True" HtmlEncode="false">
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="nombre" HeaderText="Descripción" SortExpression="nombre" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle" HtmlEncode="false">
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="f_reserva" DataFormatString="{0:dd-M-yyyy}" HeaderText="F_reserva" SortExpression="f_reserva" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle" HtmlEncode="false">
+                                            </asp:BoundField>
+                                            <asp:BoundField DataField="articulo"  HeaderText="Articulo" SortExpression="articulo" FooterStyle-HorizontalAlign="Center" FooterStyle-VerticalAlign="Middle" HtmlEncode="false"/>
+                                        </Columns>
+                                    </asp:GridView>   
+                                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DatabaseConnection %>" SelectCommand="SELECT reserva.idReserva, curso.nombre, reserva.f_reserva, reserva.articulo FROM reserva, curso , usuario WHERE (usuario.idUsuario = reserva.cliente) AND (usuario.nick LIKE '%' + @cliente + '%') AND (reserva.articulo = curso.idCurso)">
+                                                        
+                                        <SelectParameters>
+                                            <asp:SessionParameter Name="cliente" SessionField="USER" Type="String" />
+                                        </SelectParameters>
+                                    </asp:SqlDataSource>
+							
 								</ul>
 							</fieldset></div>
                            
@@ -103,7 +98,7 @@
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>

@@ -10,7 +10,7 @@
                     <div id="content" class="8u skel-cell-important">
                         <section>
                             <header class="major">
-                                <h2>Curso ajedrez</h2>
+                                <asp:Label Text="Curso ajedrez" runat="server" Font-Size="XX-Large" Font-Bold="true"></asp:Label>
                                 <hr size="4px" width="100%" align="center" color="gray"/>
                                 </div>
                    
@@ -26,15 +26,14 @@
 
                             
                              <p align=right><font align=left size=5><strong><font face="arial">Precio: 31€</font>   
-                             </strong></font><a align=right href="#" class="button">Comprar</a></p>
+                             </strong></font><asp:Button ID="comprar" Text="Comprar" OnClick="comprar_Click" runat="server"/></p>
+
                             <!-- FIN CODIGO VISOR DE IMAGENES --> 
-                           </div><div><strong>
-                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="ButtonReserva" runat="server" OnClick ="ButtonReservar" Text="¡Reserva ya!">
-</asp:LinkButton></strong>
                            </div>
+
                            <div align="justify">
 
-                            <strong>DESCRIPCIÓN</strong> <p></p>
+                            <asp:Label Text="DESCRIPCION" runat="server" Font-Size="X-Large" Font-Bold="false"></asp:Label> <p></p>
                             <hr size="4px" width="100%" align="center" color="gray"/>
                            <p></p>
                            <p><strong>INICIACIÓN: </strong> 
@@ -105,10 +104,7 @@ border-radius: 5px;
    
    <input class="noEmpty" name="Comment[content]" type="text" placeholder="Escribe algo..." autocomplete="off">
             <p></p>
-            <!-- LIKES -->
-   <button type="button"><img src="images/iconos/like.png"/></button>
-            <button type="button"><img src="images/iconos/dislike.png"/></button>
-            <!-- FIN LIKES -->
+            
         </form>
 
                            </div>

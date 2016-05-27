@@ -11,18 +11,33 @@ namespace WebApplication1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["USER"] == null && Session["PROFESSOR"] == null)
+                Response.Redirect("~/inicio.aspx");
+
             if (Session["USER"] != null)
             {
                 UsuarioEN us = new UsuarioEN();
                 us.Nick = Session["USER"].ToString();
                 us.mostrar_usuario();
 
-                Label1.Text = us.Nick;
-                Label2.Text = us.Nombre; ;
-                Label3.Text = us.Email;
+                ImagePerfil.ImageUrl = us.Avatar;
+                Nick.Text = us.Nick;
+                Nombre.Text = us.Nombre; ;
+                Email.Text = us.Email;
             }
             else
-                Response.Redirect("~/inicio.aspx");
+            {
+                UsuarioEN us = new UsuarioEN();
+                us.Nick = Session["PROFESSOR"].ToString();
+                us.mostrar_usuario();
+
+                ImagePerfil.ImageUrl = us.Avatar;
+                Nick.Text = us.Nick;
+                Nombre.Text = us.Nombre; ;
+                Email.Text = us.Email;
+
+
+            }
 
 
         }

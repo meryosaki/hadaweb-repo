@@ -39,7 +39,7 @@ namespace PracticaGrupalHADA
             DataTable t = new DataTable();
             t = bdvirtual.Tables["pedido"];
             DataRow nuevafila = t.NewRow();
-            nuevafila[0] = pedido.IdPedido;
+            nuevafila[0] = Last_ID();
             nuevafila[1] = pedido.Descripcion;
             nuevafila[2] = pedido.F_compra;
             nuevafila[3] = pedido.Importe_total;
@@ -48,7 +48,16 @@ namespace PracticaGrupalHADA
             nuevafila[6] = pedido.FormaPago;
             nuevafila[7] = pedido.EstadoPedido;
             nuevafila[8] = pedido.Cliente;
-            nuevafila[9] = pedido.Curso;
+            if (pedido.Curso != null)
+            {
+                nuevafila[9] = pedido.Curso;
+                nuevafila[10] = DBNull.Value;
+            }
+            else
+            {
+                nuevafila[9] = DBNull.Value;
+                nuevafila[10] = pedido.Oferta;
+            }
             t.Rows.Add(nuevafila);
             SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
             da.Update(bdvirtual, "pedido");
@@ -69,7 +78,7 @@ namespace PracticaGrupalHADA
         public void modificar_pedido(PedidoEN pedido){
             // Aqui realizamos el update en la bbdd
             conex.Open();
-            SqlCommand com = new SqlCommand("update pedido set descripcion ='" + pedido.Descripcion + "', f_compra =" + pedido.F_compra + "', importe_total =" + pedido.Importe_total + "', puntos =" + pedido.Puntos + "', estadoPago =" + pedido.EstadoPago + "', formaPago =" + pedido.FormaPago + "', estadoPedido =" + pedido.EstadoPedido + "', cliente =" + pedido.Cliente + "where idPedido = " + pedido.IdPedido, conex);
+            SqlCommand com = new SqlCommand("update pedido set descripcion ='" + pedido.Descripcion + "', f_compra =" + pedido.F_compra + "', importe_total =" + pedido.Importe_total + "', puntos =" + pedido.Puntos + "', estadoPago =" + pedido.EstadoPago + "', formaPago =" + pedido.FormaPago + "', estadoPedido =" + pedido.EstadoPedido + "', cliente =" + pedido.Cliente + ", oferta =" + pedido.Oferta + "where idPedido = " + pedido.IdPedido, conex);
             com.ExecuteNonQuery();
             conex.Close();
         }
@@ -94,9 +103,9 @@ namespace PracticaGrupalHADA
                 pedido.EstadoPago = dr["estadoPago"].ToString();
                 pedido.FormaPago = dr["formaPago"].ToString();
                 pedido.EstadoPedido = dr["estadoPedido"].ToString();
-                pedido.Cliente = Int32.Parse(dr["cliente"].ToString());
-
-
+                pedido.Cliente = dr["cliente"].ToString();
+                pedido.Curso = Convert.ToInt32(dr["curso"].ToString());
+                pedido.Oferta = Convert.ToInt32(dr["oferta"].ToString());
             }
             catch (Exception ex)
             {
@@ -116,6 +125,73 @@ namespace PracticaGrupalHADA
         {
             List<PedidoEN> pedidos = new List<PedidoEN>();
             return pedidos;
+        }
+        //Esta función cuando le demos a confirmar perdido en el carrito pondrá todos los pedidos del carrito como finalizados y pagados
+        public void Confirmar(string cliente,string forma)
+        {
+            PedidoEN pedido = new PedidoEN();
+            conex.Open();
+            string operation = "Update pedido set estadoPedido = 'Finalizado', estadoPago = 'Pagado', formaPago = '" + forma + "' where cliente = '" + cliente + "' and estadoPedido = 'Activo'";
+            SqlCommand com = new SqlCommand(operation, conex);
+            com.ExecuteNonQuery();
+        }
+
+        //Esta función suma los puntos que da cada pedido y se lo añade al usuario
+        public void SumarPuntos(string cliente) {
+            PedidoEN p = new PedidoEN();
+            conex.Open();
+            string operation = "Update cliente set puntosTotales = puntosTotales + isnull ((Select sum(puntos) from pedido where cliente = '" + cliente + "' and estadoPedido = 'Activo') , 0) from cliente inner join usuario on usuario.idUsuario = cliente.idCliente and nick = '" + cliente + "'";
+            SqlCommand com = new SqlCommand(operation, conex);
+            com = new SqlCommand(operation, conex);
+            com.ExecuteNonQuery();
+            conex.Close();   
+        }
+
+        public void borrar_pedido_carrito(string cliente, string curso) {
+            conex.Open();
+            //SqlCommand com = new SqlCommand("Delete p from pedido p inner join curso c on p.curso = c.idCurso where cliente = '" + cliente + "' and c.nombre = '" + curso + "'", conex);
+            SqlCommand com = new SqlCommand("Delete from pedido where idPedido in (select idPedido from pedido p inner join curso c on p.curso = c.idCurso where cliente = '" + cliente + "' and c.nombre = '" + curso + "' union select idPedido from pedido p inner join oferta o on p.oferta = o.idOferta where cliente = '" + cliente + "' and o.nombre = '" + curso + "')", conex);
+            com.ExecuteNonQuery();
+            conex.Close();      
+        }
+        //Esta función borra todos los pedidos del carrito
+        public void borrar_todos_los_pedidos(string cliente)
+        {
+            conex.Open();
+            SqlCommand com = new SqlCommand("Delete p from pedido p where cliente = '" + cliente + "' and estadoPedido = 'Activo'", conex);
+            com.ExecuteNonQuery();
+            conex.Close();
+        }
+
+        public int Last_ID()
+        {
+            int id = 0;
+            SqlDataReader dr;
+            try
+            {
+                conex.Open();
+                string operation = "Select max(idPedido) from pedido";
+                SqlCommand com = new SqlCommand(operation, conex);
+                dr = com.ExecuteReader();
+                dr.Read();
+                if (dr.HasRows)
+                {
+                    id = dr.GetInt32(0);
+                    id++;
+                }
+                else
+                    id = 1;
+                dr.Close();
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conex.Close();
+            }
+            return id;
         }
     }
 }

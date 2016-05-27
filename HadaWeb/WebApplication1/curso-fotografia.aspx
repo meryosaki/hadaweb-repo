@@ -10,7 +10,7 @@
                     <div id="content" class="8u skel-cell-important">
                         <section>
                             <header class="major">
-                                <h2>Curso fotografía</h2> 
+                                <asp:Label Text="Curso fotografía" runat="server" Font-Size="XX-Large" Font-Bold="true"></asp:Label> 
                                 <hr size="4px" width="100%" align="center" color="gray"/>
                                 </div>
                                 
@@ -25,12 +25,9 @@
 
                             
                              <p align=right><font align=left size=5><strong><font face="arial">Precio: 30€</font>   
-                             </strong></font><a align=right href="#" class="button">Comprar</a></p>
+                             </strong></font><asp:Button ID="comprar" Text="Comprar" OnClick="comprar_Click" runat="server"/></p>
                             <!-- FIN CODIGO VISOR DE IMAGENES --> 
-                            </div><div><strong>
-                               <img src="images/iconos/estrella07.png"/><asp:LinkButton id="ButtonReserva" runat="server" OnClick ="ButtonReservar" Text="¡Reserva ya!">
-</asp:LinkButton></strong>
-                           </div>
+                            </div>
                            <div align="justify">
                             <strong>DESCRIPCIÓN</strong>
                             <hr size="4px" width="100%" align="center" color="gray"/>
@@ -94,10 +91,7 @@ border-radius: 5px;
    
    <input class="noEmpty" name="Comment[content]" type="text" placeholder="Escribe algo..." autocomplete="off">
             <p></p>
-            <!-- LIKES -->
-   <button type="button"><img src="images/iconos/like.png"/></button>
-            <button type="button"><img src="images/iconos/dislike.png"/></button>
-            <!-- FIN LIKES -->
+            
         </form>
 
                            </div>

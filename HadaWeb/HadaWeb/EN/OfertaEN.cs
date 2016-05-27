@@ -10,7 +10,7 @@ namespace PracticaGrupalHADA
     {
         private int idOferta;
         private string nombre;
-        private string avatar;
+        private string avatar, categoria;
         private int curso1;
         private int curso2;
         private OfertaCAD oferta_cad;
@@ -33,6 +33,11 @@ namespace PracticaGrupalHADA
             set { avatar = value; }
         }
 
+        public string Categoria
+        {
+            get { return categoria; }
+            set { categoria = value; }
+        }
         public int Curso1
         {
             get { return curso1; }
@@ -44,19 +49,20 @@ namespace PracticaGrupalHADA
             get { return curso2; }
             set { curso2 = value; }
         }
-        private void asignar (int idOferta, string nombre, string avatar, int curso1, int curso2) {
+        private void asignar (int idOferta, string nombre, string avatar, string categoria, int curso1, int curso2) {
             this.idOferta = idOferta;
             this.nombre = nombre;
             this.avatar = avatar;
+            this.categoria = categoria;
             this.curso1 = curso1;
             this.curso2 = curso2;
         }
         public OfertaEN() {
-            asignar(0, "", "", 0, 0);
+            asignar(0, "", "", "", 0, 0);
         }
 
         public OfertaEN(int idOferta, string nombre, string avatar, int curso1, int curso2) {
-            asignar(idOferta, nombre, avatar, curso1, curso2);
+            asignar(idOferta, nombre, avatar, categoria, curso1, curso2);
         }
 
         public void insertar_oferta()
@@ -111,14 +117,24 @@ namespace PracticaGrupalHADA
             }
         }
 
+        public string numEN(string a)
+        {
+            oferta_cad = new OfertaCAD("bbddSQLhada");
+            return oferta_cad.nombresOfertasCAD(a);
+        }
 
+        public List<OfertaEN> mostrar_todas_ofertasEN()
+        {
+            try
+            {
+                oferta_cad = new OfertaCAD("bbddSQLhada");
 
-
-
-
-
-
-
-
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error mostrando Cursos: %s\n", e);
+            }
+            return oferta_cad.mostrar_todas_ofertas();
+        }
     }
 }

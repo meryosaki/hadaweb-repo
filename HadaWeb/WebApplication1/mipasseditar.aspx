@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master1.Master" AutoEventWireup="true" CodeBehind="mipasseditar.aspx.cs" Inherits="WebApplication1.mipasseditar" EnableEventValidation="false"%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="extra">
 						<div class="container">
@@ -28,23 +29,49 @@
                                 <hr size="4px" width="100%" align="center" color="gray"/>
 									<input type="hidden" name="accountType" value="private" />
 									<li>
-                                       <strong>Actualmente tu contraseña tienes una contraseña asignada.</strong><p></p>
                                        <li class="password">
-										<label><strong>Introduce tu contraseña actual</strong><em>*</em></label>
-										<input type="password" name="logonPassword" id="register-password" maxLength="15" />
-									   </li>
-                                       <li class="password-repeat">
-										<label><strong>Introduce tu nueva contraseña</strong><em>*</em></label>
-										<input type="password" name="logonPasswordVerify"  id="register-password-confirm" maxLength="15" />
-									   </li>
-                                       <li class="password-repeat">
-										<label><strong>Repite tu nueva contraseña</strong><em>*</em></label>
-										<input type="password" name="logonPasswordVerify"  id="Password1" maxLength="15" />
-									   </li>
-								</ul>
-								<a href="misdatos.aspx" class="button">Aceptar</a>   <a href="misdatos.aspx" class="button">Cancelar</a>
+                                         <asp:Label ID="contrasenya" runat="server" Text="Contraseña actual" Font-Bold="true" ></asp:Label>
+                                          <asp:TextBox ID="TextBoxContrasenya" runat="server" TextMode="Password" > </asp:TextBox>
+                                        <asp:CustomValidator ID="CustomValidatorPass" 
+                                            runat="server" 
+                                            ErrorMessage="La contraseña actual no coincide"
+                                            ControlToValidate ="TextBoxContrasenya" 
+                                            ForeColor ="Red"
+                                            OnServerValidate="ComprobarPass" >
+                                       </asp:CustomValidator>
+                                            
 
-							</fieldset></div>
+                                          
+										</li>
+                                       <li class="password-repeat">
+										<asp:Label ID="contrasenyanueva1" runat="server" Text="Nueva contraseña" Font-Bold="true"></asp:Label>
+                                          <asp:TextBox ID="TextBoxContrasenyaNueva1" runat="server" TextMode="Password"> </asp:TextBox>
+
+                                           <asp:PasswordStrength ID="PasswordStrength1" runat="server" TargetControlID="TextBoxContrasenyaNueva1" 
+                                               DisplayPosition="RightSide" StrengthIndicatorType="Text" PreferredPasswordLength="10" PrefixText="Nivel Seguridad :"
+                                               TextStrengthDescriptions="Poco Seguro;Débilmente ;Medio ;Alto ;Excelente" BarBorderCssClass="style">
+
+                                           </asp:PasswordStrength>
+
+									   </li>
+                                       <li class="password-repeat">
+									<asp:Label ID="contrasenyanueva2" runat="server" Text="Nueva contraseña" Font-Bold="true"> </asp:Label>
+                                          <asp:TextBox ID="TextBoxContrasenyaNueva2" runat="server" TextMode="Password"> </asp:TextBox>
+									   </li>
+
+                                        <asp:CompareValidator ID="ComparaContrasenya" runat="server" 
+                                            ErrorMessage="Las contraseñas no coinciden"
+                                            ControlToValidate="TextBoxContrasenyaNueva2"
+                                            ControlToCompare="TextBoxContrasenyaNueva1"
+                                            Operator="Equal"
+                                            ForeColor ="Red">
+                                        </asp:CompareValidator>
+                                </ul>
+                                <asp:Button ID="ButtonAceptar" runat="server" Text="Aceptar"  OnClick="Aceptar_OnClick" />
+                                <asp:Button ID="ButtonCancelar" runat="server" Text="Cancelar" OnClick="Cancelar_OnClick" />
+
+							</fieldset></div>
+
                            
 						</div> <p></p> <div><hr size="4px" width="100%" align="center" color="white"/></div>
 					</div>
@@ -71,7 +98,7 @@
 									<section>
 										<ul class="style">
 											<li class="fa fa-mobile-phone">
-												<h3><a href="contacto.aspx">Aviso legal y privacidad</a></h3>
+												<h3><a href="avisolegal.aspx">Aviso legal y privacidad</a></h3>
 												<span>Infórmate sobre nuestro aviso legal y la privacidad de nuestra web.</span> </li>
 											<li class="fa fa-star">
 												<h3><a href="ofertas.aspx">Ofertas</a></h3>
